@@ -690,7 +690,7 @@ Solucao: Altere a porta no arquivo .env:
 
 ## 👥 Equipe e Licenca
 
-**Desenvolvido por:** GABRIEL EDUARDOA RRUDA FERNANDES - SIPA/ÔNIX
+**Desenvolvido por:** GABRIEL EDUARDO ARRUDA FERNANDES - SIPA/ÔNIX
 
 **Ano:** 2024-2026
 
