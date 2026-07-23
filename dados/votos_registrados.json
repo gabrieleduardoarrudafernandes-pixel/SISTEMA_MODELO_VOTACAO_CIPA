@@ -1,0 +1,1742 @@
+[
+  {
+    "id": 1,
+    "eleitor_numcad": 2353,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T16:10:34.554Z",
+    "eleitor_dados": {
+      "numcad": 2353,
+      "nomfun": "WESLEI FRANCISCO DOS SANTOS"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 2,
+    "eleitor_numcad": 1599,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T16:12:35.514Z",
+    "eleitor_dados": {
+      "numcad": 1599,
+      "nomfun": "PAULO BRAGAS MACIEL"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 3,
+    "eleitor_numcad": 840,
+    "candidato_numcad": "135",
+    "data_voto": "2026-01-23T16:12:47.681Z",
+    "eleitor_dados": {
+      "numcad": 840,
+      "nomfun": "MAXWEL LUCAS SANTOS SOUZA"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 4,
+    "eleitor_numcad": 425,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T16:14:53.044Z",
+    "eleitor_dados": {
+      "numcad": 425,
+      "nomfun": "RIVALDO PEREIRA DA SILVA CONCEIÇÃO"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 5,
+    "eleitor_numcad": 838,
+    "candidato_numcad": "135",
+    "data_voto": "2026-01-23T16:17:03.418Z",
+    "eleitor_dados": {
+      "numcad": 838,
+      "nomfun": "JOAQUIM AFONSO OLIVEIRA DE PAULA "
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 6,
+    "eleitor_numcad": 745,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T16:18:17.161Z",
+    "eleitor_dados": {
+      "numcad": 745,
+      "nomfun": "ARTHUR BATISTA DOS SANTOS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 7,
+    "eleitor_numcad": 1992,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T16:19:04.346Z",
+    "eleitor_dados": {
+      "numcad": 1992,
+      "nomfun": "DORVACY FARIAS FERREIRA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 8,
+    "eleitor_numcad": 841,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T16:19:46.393Z",
+    "eleitor_dados": {
+      "numcad": 841,
+      "nomfun": "BRENNO ASSIS BARBANTINI DA SILVA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 9,
+    "eleitor_numcad": 664,
+    "candidato_numcad": "253",
+    "data_voto": "2026-01-23T16:20:36.161Z",
+    "eleitor_dados": {
+      "numcad": 664,
+      "nomfun": "LAZARO BRUNO FERREIRA DA ROCHA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 10,
+    "eleitor_numcad": 239,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T16:20:47.298Z",
+    "eleitor_dados": {
+      "numcad": 239,
+      "nomfun": "ALEXANDRE BAPTISTA ROCHA"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 11,
+    "eleitor_numcad": 808,
+    "candidato_numcad": "253",
+    "data_voto": "2026-01-23T16:22:02.292Z",
+    "eleitor_dados": {
+      "numcad": 808,
+      "nomfun": "WELBER MARCOS SANTOS SOARES"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 12,
+    "eleitor_numcad": 820,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T16:22:18.548Z",
+    "eleitor_dados": {
+      "numcad": 820,
+      "nomfun": "CLEMERSON DE ALMEIDA PRATA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 13,
+    "eleitor_numcad": 422,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T16:26:34.842Z",
+    "eleitor_dados": {
+      "numcad": 422,
+      "nomfun": "DORILENE DA COSTA DE MORAIS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 14,
+    "eleitor_numcad": 253,
+    "candidato_numcad": "253",
+    "data_voto": "2026-01-23T16:27:35.230Z",
+    "eleitor_dados": {
+      "numcad": 253,
+      "nomfun": "WELDER DE OLIVEIRA"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 15,
+    "eleitor_numcad": 690,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T16:27:45.599Z",
+    "eleitor_dados": {
+      "numcad": 690,
+      "nomfun": "GUSTAVO VINICIUS DA SILVA SOUZA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 16,
+    "eleitor_numcad": 773,
+    "candidato_numcad": "253",
+    "data_voto": "2026-01-23T16:28:41.447Z",
+    "eleitor_dados": {
+      "numcad": 773,
+      "nomfun": "BRENO DA SILVA CARVALHO"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 17,
+    "eleitor_numcad": 665,
+    "candidato_numcad": "253",
+    "data_voto": "2026-01-23T16:28:46.197Z",
+    "eleitor_dados": {
+      "numcad": 665,
+      "nomfun": "JUCELINO MARTINS FRANCISCO"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 18,
+    "eleitor_numcad": 1860,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T16:31:32.756Z",
+    "eleitor_dados": {
+      "numcad": 1860,
+      "nomfun": "MARILDA DE BRITO RODRIGUES"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 19,
+    "eleitor_numcad": 603,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T16:32:38.069Z",
+    "eleitor_dados": {
+      "numcad": 603,
+      "nomfun": "MARIA SILVA LIMA FERREIRA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 20,
+    "eleitor_numcad": 750,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T16:33:17.046Z",
+    "eleitor_dados": {
+      "numcad": 750,
+      "nomfun": "ALEXSANDER CORREIA DA SILVA FERREIRA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 21,
+    "eleitor_numcad": 831,
+    "candidato_numcad": "NULO",
+    "data_voto": "2026-01-23T16:34:20.535Z",
+    "eleitor_dados": {
+      "numcad": 831,
+      "nomfun": "VALTER FERNANDES JUNIOR"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 22,
+    "eleitor_numcad": 2283,
+    "candidato_numcad": "187",
+    "data_voto": "2026-01-23T16:34:25.064Z",
+    "eleitor_dados": {
+      "numcad": 2283,
+      "nomfun": "JOAO ALBERTO COSTA DE OLIVEIRA"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 23,
+    "eleitor_numcad": 833,
+    "candidato_numcad": "NULO",
+    "data_voto": "2026-01-23T16:36:07.802Z",
+    "eleitor_dados": {
+      "numcad": 833,
+      "nomfun": "LUCAS MATIAS DOS SANTOS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 24,
+    "eleitor_numcad": 769,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T16:37:10.706Z",
+    "eleitor_dados": {
+      "numcad": 769,
+      "nomfun": "RICHARD MANOEL SOARES TROLESI"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 25,
+    "eleitor_numcad": 823,
+    "candidato_numcad": "189",
+    "data_voto": "2026-01-23T16:37:59.429Z",
+    "eleitor_dados": {
+      "numcad": 823,
+      "nomfun": "JOSE GABRIEL DE SOUSA SILVA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 26,
+    "eleitor_numcad": "663",
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T16:38:55.801Z",
+    "eleitor_dados": {
+      "numcad": "663",
+      "nomfun": "GABRIEL EDUARDO ARRUDA FERNANDES"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 27,
+    "eleitor_numcad": 2209,
+    "candidato_numcad": "NULO",
+    "data_voto": "2026-01-23T16:39:30.573Z",
+    "eleitor_dados": {
+      "numcad": 2209,
+      "nomfun": "ADELIA APARECIDA GOMES PEREIRA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 28,
+    "eleitor_numcad": 2609,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T16:40:43.481Z",
+    "eleitor_dados": {
+      "numcad": 2609,
+      "nomfun": "RAILSON JOSE DA SILVA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 29,
+    "eleitor_numcad": 836,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T16:41:48.043Z",
+    "eleitor_dados": {
+      "numcad": 836,
+      "nomfun": "VICTOR DO VALLE DA CONCEIÇÃO"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 30,
+    "eleitor_numcad": 1693,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T16:44:09.134Z",
+    "eleitor_dados": {
+      "numcad": 1693,
+      "nomfun": "MARCIA HELENA CANDIDO"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 31,
+    "eleitor_numcad": 540,
+    "candidato_numcad": "135",
+    "data_voto": "2026-01-23T16:44:42.342Z",
+    "eleitor_dados": {
+      "numcad": 540,
+      "nomfun": "MATHEUS RAMOS FONSECA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 32,
+    "eleitor_numcad": 553,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T16:45:40.712Z",
+    "eleitor_dados": {
+      "numcad": 553,
+      "nomfun": "JOERLISSON DE MORAIS MARTINS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 33,
+    "eleitor_numcad": 104,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T16:47:17.564Z",
+    "eleitor_dados": {
+      "numcad": 104,
+      "nomfun": "IDGLAN DA COSTA OLIVEIRA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 34,
+    "eleitor_numcad": 415,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T16:48:42.407Z",
+    "eleitor_dados": {
+      "numcad": 415,
+      "nomfun": "LUCIANA INACIA DA SILVA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 35,
+    "eleitor_numcad": 1821,
+    "candidato_numcad": "NULO",
+    "data_voto": "2026-01-23T16:50:57.319Z",
+    "eleitor_dados": {
+      "numcad": 1821,
+      "nomfun": "IVANA DIRLENE DA SILVA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 36,
+    "eleitor_numcad": 2489,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T16:52:09.722Z",
+    "eleitor_dados": {
+      "numcad": 2489,
+      "nomfun": "MARIA RAIMUNDA GONCALVES DA SILVA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 37,
+    "eleitor_numcad": 672,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T16:53:37.707Z",
+    "eleitor_dados": {
+      "numcad": 672,
+      "nomfun": "ANTONIA CELIA FERREIRA DE FRANÇA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 38,
+    "eleitor_numcad": 408,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T16:54:51.670Z",
+    "eleitor_dados": {
+      "numcad": 408,
+      "nomfun": "ERIKA LOPES DOS SANTOS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 39,
+    "eleitor_numcad": 400,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T16:55:41.070Z",
+    "eleitor_dados": {
+      "numcad": 400,
+      "nomfun": "LEONARDO BITENCOURT SOARES"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 40,
+    "eleitor_numcad": 2584,
+    "candidato_numcad": "253",
+    "data_voto": "2026-01-23T16:56:24.664Z",
+    "eleitor_dados": {
+      "numcad": 2584,
+      "nomfun": "GUILHERME ALVES FERREIRA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 41,
+    "eleitor_numcad": 2297,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T16:57:50.457Z",
+    "eleitor_dados": {
+      "numcad": 2297,
+      "nomfun": "MARIA NILZA VIANA SANTOS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 42,
+    "eleitor_numcad": 2155,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T16:59:14.899Z",
+    "eleitor_dados": {
+      "numcad": 2155,
+      "nomfun": "VALQUIRIA ROCHA BARBOSA DA CRUZ"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 43,
+    "eleitor_numcad": 1598,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T17:00:49.222Z",
+    "eleitor_dados": {
+      "numcad": 1598,
+      "nomfun": "MARILDA ANTONIA DOS REIS VALERIO"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 44,
+    "eleitor_numcad": 470,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T17:02:14.816Z",
+    "eleitor_dados": {
+      "numcad": 470,
+      "nomfun": "RAIMUNDO NONATO MESSIAS DA COSTA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 45,
+    "eleitor_numcad": 542,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T17:03:01.143Z",
+    "eleitor_dados": {
+      "numcad": 542,
+      "nomfun": "CAMILA PEREIRA DE SOUSA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 46,
+    "eleitor_numcad": 712,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T17:03:57.554Z",
+    "eleitor_dados": {
+      "numcad": 712,
+      "nomfun": "MARIA DE FATIMA GOMES DE SALES"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 47,
+    "eleitor_numcad": 693,
+    "candidato_numcad": "51",
+    "data_voto": "2026-01-23T17:05:10.900Z",
+    "eleitor_dados": {
+      "numcad": 693,
+      "nomfun": "PAULO ROBERTO DA SILVA SILVERIO"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 48,
+    "eleitor_numcad": 248,
+    "candidato_numcad": "135",
+    "data_voto": "2026-01-23T17:07:36.193Z",
+    "eleitor_dados": {
+      "numcad": 248,
+      "nomfun": "LUIZ CARLOS TEIXEIRA DA SILVA NASCIMENTO"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 49,
+    "eleitor_numcad": 835,
+    "candidato_numcad": "135",
+    "data_voto": "2026-01-23T17:08:33.216Z",
+    "eleitor_dados": {
+      "numcad": 835,
+      "nomfun": "LUIS FELIPE DE SOUSA MOURA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 50,
+    "eleitor_numcad": 2094,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T17:12:10.087Z",
+    "eleitor_dados": {
+      "numcad": 2094,
+      "nomfun": "ANTONIA ERINALDA VIANA DE FRANCA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 51,
+    "eleitor_numcad": 348,
+    "candidato_numcad": "NULO",
+    "data_voto": "2026-01-23T17:13:38.904Z",
+    "eleitor_dados": {
+      "numcad": 348,
+      "nomfun": "JUAN CARLOS DOS SANTOS"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 52,
+    "eleitor_numcad": 1622,
+    "candidato_numcad": "74",
+    "data_voto": "2026-01-23T17:14:07.442Z",
+    "eleitor_dados": {
+      "numcad": 1622,
+      "nomfun": "DALZIRIA DA SILVA LIMA DE JESUS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 53,
+    "eleitor_numcad": 844,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T17:15:22.731Z",
+    "eleitor_dados": {
+      "numcad": 844,
+      "nomfun": "RAUL CESAR SERAFIM MANZAN"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 54,
+    "eleitor_numcad": 1312,
+    "candidato_numcad": "71",
+    "data_voto": "2026-01-23T17:15:35.482Z",
+    "eleitor_dados": {
+      "numcad": 1312,
+      "nomfun": "CLAUDENIR FAUSTO ARAUJO"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 55,
+    "eleitor_numcad": 2286,
+    "candidato_numcad": "189",
+    "data_voto": "2026-01-23T17:16:29.150Z",
+    "eleitor_dados": {
+      "numcad": 2286,
+      "nomfun": "ADENIVALDO FERREIRA DA SILVA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 56,
+    "eleitor_numcad": 630,
+    "candidato_numcad": "189",
+    "data_voto": "2026-01-23T17:17:29.994Z",
+    "eleitor_dados": {
+      "numcad": 630,
+      "nomfun": "HELIO JOSE RIBELA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 57,
+    "eleitor_numcad": 330,
+    "candidato_numcad": "74",
+    "data_voto": "2026-01-23T17:17:40.058Z",
+    "eleitor_dados": {
+      "numcad": 330,
+      "nomfun": "FRANCISCO DA SILVA GAIDO"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 58,
+    "eleitor_numcad": 759,
+    "candidato_numcad": "189",
+    "data_voto": "2026-01-23T17:18:36.038Z",
+    "eleitor_dados": {
+      "numcad": 759,
+      "nomfun": "LUIS ALBERTO BENITEZ ARCILA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 59,
+    "eleitor_numcad": 657,
+    "candidato_numcad": "189",
+    "data_voto": "2026-01-23T17:18:37.478Z",
+    "eleitor_dados": {
+      "numcad": 657,
+      "nomfun": "JOSE ALEXANDER DIAZ MEZA"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 60,
+    "eleitor_numcad": 552,
+    "candidato_numcad": "74",
+    "data_voto": "2026-01-23T17:19:47.412Z",
+    "eleitor_dados": {
+      "numcad": 552,
+      "nomfun": "MACIEL DOS SANTOS ARAUJO"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 61,
+    "eleitor_numcad": 1601,
+    "candidato_numcad": "74",
+    "data_voto": "2026-01-23T17:20:08.979Z",
+    "eleitor_dados": {
+      "numcad": 1601,
+      "nomfun": "FABIANO EUSTAQUIO DA LUZ"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 62,
+    "eleitor_numcad": 2537,
+    "candidato_numcad": "NULO",
+    "data_voto": "2026-01-23T17:20:43.380Z",
+    "eleitor_dados": {
+      "numcad": 2537,
+      "nomfun": "TACIO LUIZ CAMPELO"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 63,
+    "eleitor_numcad": 1069,
+    "candidato_numcad": "71",
+    "data_voto": "2026-01-23T17:21:23.612Z",
+    "eleitor_dados": {
+      "numcad": 1069,
+      "nomfun": "JOAO BATISTA DOS SANTOS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 64,
+    "eleitor_numcad": 862,
+    "candidato_numcad": "71",
+    "data_voto": "2026-01-23T17:21:57.045Z",
+    "eleitor_dados": {
+      "numcad": 862,
+      "nomfun": "SAMUEL PARREIRA DA SILVA"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 65,
+    "eleitor_numcad": 852,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T17:25:46.394Z",
+    "eleitor_dados": {
+      "numcad": 852,
+      "nomfun": "LUIS GUSTAVO FELIX NOBRE DE OLIVEIRA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 66,
+    "eleitor_numcad": 334,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T17:28:34.103Z",
+    "eleitor_dados": {
+      "numcad": 334,
+      "nomfun": "JOSÉ OVIDIO DA SILVA ROMÃO"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 67,
+    "eleitor_numcad": 839,
+    "candidato_numcad": "189",
+    "data_voto": "2026-01-23T17:28:46.103Z",
+    "eleitor_dados": {
+      "numcad": 839,
+      "nomfun": "OTAVIO HENRIQUE PIRES DE SOUSA "
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 68,
+    "eleitor_numcad": 513,
+    "candidato_numcad": "71",
+    "data_voto": "2026-01-23T17:29:35.952Z",
+    "eleitor_dados": {
+      "numcad": 513,
+      "nomfun": "KELLY FABIANA LUIS"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 69,
+    "eleitor_numcad": 2142,
+    "candidato_numcad": "71",
+    "data_voto": "2026-01-23T17:29:44.264Z",
+    "eleitor_dados": {
+      "numcad": 2142,
+      "nomfun": "VALDA HELENA DA SILVA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 70,
+    "eleitor_numcad": 854,
+    "candidato_numcad": "175",
+    "data_voto": "2026-01-23T17:30:50.016Z",
+    "eleitor_dados": {
+      "numcad": 854,
+      "nomfun": "PAULO HENRIQUE MARIANO VIEIRA"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 71,
+    "eleitor_numcad": 763,
+    "candidato_numcad": "175",
+    "data_voto": "2026-01-23T17:31:38.635Z",
+    "eleitor_dados": {
+      "numcad": 763,
+      "nomfun": "MARCIA AUGUSTA GONTIJO DA SILVA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 72,
+    "eleitor_numcad": 1460,
+    "candidato_numcad": "187",
+    "data_voto": "2026-01-23T17:32:13.472Z",
+    "eleitor_dados": {
+      "numcad": 1460,
+      "nomfun": "MARIZA MARIA MARTINS DE ARAUJO"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 73,
+    "eleitor_numcad": 1650,
+    "candidato_numcad": "NULO",
+    "data_voto": "2026-01-23T17:33:36.564Z",
+    "eleitor_dados": {
+      "numcad": 1650,
+      "nomfun": "CLEBIO LUIZ PAIS DA SILVA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 74,
+    "eleitor_numcad": 1306,
+    "candidato_numcad": "189",
+    "data_voto": "2026-01-23T17:36:15.588Z",
+    "eleitor_dados": {
+      "numcad": 1306,
+      "nomfun": "GUILHERME ALVES FONSECA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 75,
+    "eleitor_numcad": 312,
+    "candidato_numcad": "135",
+    "data_voto": "2026-01-23T17:37:05.340Z",
+    "eleitor_dados": {
+      "numcad": 312,
+      "nomfun": "JOÃO CARLOS FERREIRA DE ASSIS"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 76,
+    "eleitor_numcad": 490,
+    "candidato_numcad": "135",
+    "data_voto": "2026-01-23T17:37:17.981Z",
+    "eleitor_dados": {
+      "numcad": 490,
+      "nomfun": "SAMUEL HENRIQUE DONIZETE SILVA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 77,
+    "eleitor_numcad": 800,
+    "candidato_numcad": "51",
+    "data_voto": "2026-01-23T17:39:50.860Z",
+    "eleitor_dados": {
+      "numcad": 800,
+      "nomfun": "VINICIUS AUGUSTO DA CUNHA GONCALVES"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 78,
+    "eleitor_numcad": 798,
+    "candidato_numcad": "175",
+    "data_voto": "2026-01-23T17:40:09.016Z",
+    "eleitor_dados": {
+      "numcad": 798,
+      "nomfun": "GUSTAVO VENANCIO COSTA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 79,
+    "eleitor_numcad": 795,
+    "candidato_numcad": "135",
+    "data_voto": "2026-01-23T17:40:55.356Z",
+    "eleitor_dados": {
+      "numcad": 795,
+      "nomfun": "KETHELEN LUCIA GONÇALVES"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 80,
+    "eleitor_numcad": 221,
+    "candidato_numcad": "175",
+    "data_voto": "2026-01-23T17:41:02.521Z",
+    "eleitor_dados": {
+      "numcad": 221,
+      "nomfun": "JOSE ERISVAN DE FRANCA TORRES"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 81,
+    "eleitor_numcad": 369,
+    "candidato_numcad": "175",
+    "data_voto": "2026-01-23T17:42:03.797Z",
+    "eleitor_dados": {
+      "numcad": 369,
+      "nomfun": "VIRGINIA BEATRIZ BATISTA"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 82,
+    "eleitor_numcad": 678,
+    "candidato_numcad": "135",
+    "data_voto": "2026-01-23T17:42:39.788Z",
+    "eleitor_dados": {
+      "numcad": 678,
+      "nomfun": "MATHEUS LINCOLN DA COSTA ALVES"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 83,
+    "eleitor_numcad": 518,
+    "candidato_numcad": "189",
+    "data_voto": "2026-01-23T17:43:03.964Z",
+    "eleitor_dados": {
+      "numcad": 518,
+      "nomfun": "NICOLAS MARTINS SILVA"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 84,
+    "eleitor_numcad": 432,
+    "candidato_numcad": "175",
+    "data_voto": "2026-01-23T17:45:16.535Z",
+    "eleitor_dados": {
+      "numcad": 432,
+      "nomfun": "ANTONIO VALDENIR TEIXEIRA DE SOUSA"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 85,
+    "eleitor_numcad": 825,
+    "candidato_numcad": "175",
+    "data_voto": "2026-01-23T17:46:26.326Z",
+    "eleitor_dados": {
+      "numcad": 825,
+      "nomfun": "NILSON OLIVEIRA NEVES"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 86,
+    "eleitor_numcad": 857,
+    "candidato_numcad": "175",
+    "data_voto": "2026-01-23T17:47:00.233Z",
+    "eleitor_dados": {
+      "numcad": 857,
+      "nomfun": "EDER DANIEL RIBEIRO DA SILVA"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 87,
+    "eleitor_numcad": 414,
+    "candidato_numcad": "135",
+    "data_voto": "2026-01-23T17:48:49.951Z",
+    "eleitor_dados": {
+      "numcad": 414,
+      "nomfun": "PAULO CEZAR COELHO"
+    },
+    "ip": "::ffff:192.168.1.191",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 88,
+    "eleitor_numcad": 562,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T17:55:23.885Z",
+    "eleitor_dados": {
+      "numcad": 562,
+      "nomfun": "MANOEL MESSIAS DOS SANTOS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 89,
+    "eleitor_numcad": 115,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T17:56:50.848Z",
+    "eleitor_dados": {
+      "numcad": 115,
+      "nomfun": "JOEL BATISTA DOS SANTOS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 90,
+    "eleitor_numcad": 16,
+    "candidato_numcad": "175",
+    "data_voto": "2026-01-23T18:01:26.024Z",
+    "eleitor_dados": {
+      "numcad": 16,
+      "nomfun": "CARLOS HENRIQUE MONTEIRO"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 91,
+    "eleitor_numcad": 832,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T18:03:06.889Z",
+    "eleitor_dados": {
+      "numcad": 832,
+      "nomfun": "JOSE CLEBSON DOS SANTOS "
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 92,
+    "eleitor_numcad": 612,
+    "candidato_numcad": "51",
+    "data_voto": "2026-01-23T18:04:10.707Z",
+    "eleitor_dados": {
+      "numcad": 612,
+      "nomfun": "MARCOS JULIO LOPES"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 93,
+    "eleitor_numcad": 749,
+    "candidato_numcad": "246",
+    "data_voto": "2026-01-23T18:05:13.223Z",
+    "eleitor_dados": {
+      "numcad": 749,
+      "nomfun": "MARIA DO SOCORRO C. BARRETO DA SILVA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 94,
+    "eleitor_numcad": 2240,
+    "candidato_numcad": "189",
+    "data_voto": "2026-01-23T18:06:41.374Z",
+    "eleitor_dados": {
+      "numcad": 2240,
+      "nomfun": "ANTONIO DO NASCIMENTO"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 95,
+    "eleitor_numcad": 246,
+    "candidato_numcad": "246",
+    "data_voto": "2026-01-23T18:07:41.767Z",
+    "eleitor_dados": {
+      "numcad": 246,
+      "nomfun": "CLEBSON OLIVEIRA NASCIMENTO"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 96,
+    "eleitor_numcad": 337,
+    "candidato_numcad": "51",
+    "data_voto": "2026-01-23T18:08:29.017Z",
+    "eleitor_dados": {
+      "numcad": 337,
+      "nomfun": "GARDONE CONCEIÇÃO DA SILVA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 97,
+    "eleitor_numcad": 1033,
+    "candidato_numcad": "253",
+    "data_voto": "2026-01-23T18:09:42.564Z",
+    "eleitor_dados": {
+      "numcad": 1033,
+      "nomfun": "NILTON CESAR ALVES BARBOSA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 98,
+    "eleitor_numcad": 110,
+    "candidato_numcad": "187",
+    "data_voto": "2026-01-23T18:11:23.493Z",
+    "eleitor_dados": {
+      "numcad": 110,
+      "nomfun": "JACIRON ALVES DOS SANTOS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 99,
+    "eleitor_numcad": 1150,
+    "candidato_numcad": "187",
+    "data_voto": "2026-01-23T18:12:45.559Z",
+    "eleitor_dados": {
+      "numcad": 1150,
+      "nomfun": "ADEMILSON ROSA DOS SANTOS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 100,
+    "eleitor_numcad": 826,
+    "candidato_numcad": "51",
+    "data_voto": "2026-01-23T18:13:32.448Z",
+    "eleitor_dados": {
+      "numcad": 826,
+      "nomfun": "LUCAS DE OLIVEIRA LIMA "
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 101,
+    "eleitor_numcad": 1168,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T18:14:37.586Z",
+    "eleitor_dados": {
+      "numcad": 1168,
+      "nomfun": "OSVALDO LAZARO SALERNO"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 102,
+    "eleitor_numcad": 522,
+    "candidato_numcad": "187",
+    "data_voto": "2026-01-23T18:15:20.840Z",
+    "eleitor_dados": {
+      "numcad": 522,
+      "nomfun": "MISAEL FONTINELE DA SILVA SOUSA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 103,
+    "eleitor_numcad": 50,
+    "candidato_numcad": "51",
+    "data_voto": "2026-01-23T18:16:33.677Z",
+    "eleitor_dados": {
+      "numcad": 50,
+      "nomfun": "ALEXANDRE HENRIQUE DOS SANTOS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 104,
+    "eleitor_numcad": 741,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T18:17:24.422Z",
+    "eleitor_dados": {
+      "numcad": 741,
+      "nomfun": "HELYAN DE PAULA MENZOTTI"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 105,
+    "eleitor_numcad": 2285,
+    "candidato_numcad": "51",
+    "data_voto": "2026-01-23T18:18:20.144Z",
+    "eleitor_dados": {
+      "numcad": 2285,
+      "nomfun": "FABRICIO GALDEL SANTOS GOMES"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 106,
+    "eleitor_numcad": 1467,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T18:19:15.888Z",
+    "eleitor_dados": {
+      "numcad": 1467,
+      "nomfun": "LUIS EIMAR DA CRUZ"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 107,
+    "eleitor_numcad": 856,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T18:19:44.201Z",
+    "eleitor_dados": {
+      "numcad": 856,
+      "nomfun": "WELLINGTON HENRIQUE CHAVES DOS SANTOS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 108,
+    "eleitor_numcad": 2147,
+    "candidato_numcad": "135",
+    "data_voto": "2026-01-23T18:20:57.947Z",
+    "eleitor_dados": {
+      "numcad": 2147,
+      "nomfun": "BENTO FERNANDES DA SILVA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 109,
+    "eleitor_numcad": 46,
+    "candidato_numcad": "187",
+    "data_voto": "2026-01-23T18:23:11.310Z",
+    "eleitor_dados": {
+      "numcad": 46,
+      "nomfun": "ADLET GUILLOME"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 110,
+    "eleitor_numcad": 528,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T18:24:02.391Z",
+    "eleitor_dados": {
+      "numcad": 528,
+      "nomfun": "JAIRO FERNANDO DE ARAÚJO SILVA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 111,
+    "eleitor_numcad": 2226,
+    "candidato_numcad": "51",
+    "data_voto": "2026-01-23T18:29:02.473Z",
+    "eleitor_dados": {
+      "numcad": 2226,
+      "nomfun": "CRISTIANO BEZERRA DE SANTANA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 112,
+    "eleitor_numcad": 322,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T18:29:55.359Z",
+    "eleitor_dados": {
+      "numcad": 322,
+      "nomfun": "WANDERSON CLEITON DE MACEDO BONIFACIO"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 113,
+    "eleitor_numcad": 828,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T18:31:58.779Z",
+    "eleitor_dados": {
+      "numcad": 828,
+      "nomfun": "DHOMINE ALVES "
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 114,
+    "eleitor_numcad": 843,
+    "candidato_numcad": "135",
+    "data_voto": "2026-01-23T18:33:01.067Z",
+    "eleitor_dados": {
+      "numcad": 843,
+      "nomfun": "ABADIO ANTONIO DA SILVA GABRIEL"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 115,
+    "eleitor_numcad": 737,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T18:33:37.173Z",
+    "eleitor_dados": {
+      "numcad": 737,
+      "nomfun": "FELIPE GONÇALVES"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 116,
+    "eleitor_numcad": 511,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T18:34:58.935Z",
+    "eleitor_dados": {
+      "numcad": 511,
+      "nomfun": "ALEXANDRE BARBOSA DE ARAUJO"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 117,
+    "eleitor_numcad": 426,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T18:36:43.023Z",
+    "eleitor_dados": {
+      "numcad": 426,
+      "nomfun": "MARCO ANTONIO ARDUINI"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 118,
+    "eleitor_numcad": 443,
+    "candidato_numcad": "51",
+    "data_voto": "2026-01-23T18:38:29.356Z",
+    "eleitor_dados": {
+      "numcad": 443,
+      "nomfun": "MILTON AUGUSTO DA SILVA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 119,
+    "eleitor_numcad": 780,
+    "candidato_numcad": "122",
+    "data_voto": "2026-01-23T18:40:34.519Z",
+    "eleitor_dados": {
+      "numcad": 780,
+      "nomfun": "JULIO CESAR PEREIRA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 120,
+    "eleitor_numcad": 344,
+    "candidato_numcad": "51",
+    "data_voto": "2026-01-23T18:41:43.025Z",
+    "eleitor_dados": {
+      "numcad": 344,
+      "nomfun": "MARCO TULIO FIRMINO DA SILVA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 121,
+    "eleitor_numcad": 760,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T18:42:55.618Z",
+    "eleitor_dados": {
+      "numcad": 760,
+      "nomfun": "JOAO CARLOS DA SILVA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 122,
+    "eleitor_numcad": 360,
+    "candidato_numcad": "135",
+    "data_voto": "2026-01-23T18:44:00.180Z",
+    "eleitor_dados": {
+      "numcad": 360,
+      "nomfun": "LOURINALDO JUNIO MAXIMIANO PEREIRA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 123,
+    "eleitor_numcad": 2528,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T18:46:57.224Z",
+    "eleitor_dados": {
+      "numcad": 2528,
+      "nomfun": "LEONARDO FERREIRA DOS SANTOS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 124,
+    "eleitor_numcad": 1000,
+    "candidato_numcad": "51",
+    "data_voto": "2026-01-23T18:48:17.091Z",
+    "eleitor_dados": {
+      "numcad": 1000,
+      "nomfun": "DURVAL FERREIRA DE CARVALHO"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 125,
+    "eleitor_numcad": 985,
+    "candidato_numcad": "122",
+    "data_voto": "2026-01-23T18:50:24.565Z",
+    "eleitor_dados": {
+      "numcad": 985,
+      "nomfun": "TEREZA CRISTINA FERNANDES"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 126,
+    "eleitor_numcad": 444,
+    "candidato_numcad": "NULO",
+    "data_voto": "2026-01-23T18:51:44.175Z",
+    "eleitor_dados": {
+      "numcad": 444,
+      "nomfun": "DERICK LOUGAN DE SOUSA SANTOS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 127,
+    "eleitor_numcad": 804,
+    "candidato_numcad": "51",
+    "data_voto": "2026-01-23T18:52:52.608Z",
+    "eleitor_dados": {
+      "numcad": 804,
+      "nomfun": "CHARLES LIMA FERREIRA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 128,
+    "eleitor_numcad": 778,
+    "candidato_numcad": "246",
+    "data_voto": "2026-01-23T18:54:31.027Z",
+    "eleitor_dados": {
+      "numcad": 778,
+      "nomfun": "WALTER SOARES DE SOUSA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 129,
+    "eleitor_numcad": 34,
+    "candidato_numcad": "51",
+    "data_voto": "2026-01-23T18:55:56.448Z",
+    "eleitor_dados": {
+      "numcad": 34,
+      "nomfun": "RICARDO GOMES DE SOUSA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 130,
+    "eleitor_numcad": 1923,
+    "candidato_numcad": "189",
+    "data_voto": "2026-01-23T18:57:02.671Z",
+    "eleitor_dados": {
+      "numcad": 1923,
+      "nomfun": "ADILSON RAMOS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 131,
+    "eleitor_numcad": 2264,
+    "candidato_numcad": "51",
+    "data_voto": "2026-01-23T18:58:09.265Z",
+    "eleitor_dados": {
+      "numcad": 2264,
+      "nomfun": "JOSE SEVERINO DOS SANTOS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 132,
+    "eleitor_numcad": 473,
+    "candidato_numcad": "51",
+    "data_voto": "2026-01-23T18:59:13.059Z",
+    "eleitor_dados": {
+      "numcad": 473,
+      "nomfun": "DENIS FABIANO INACIO DOS SANTOS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 133,
+    "eleitor_numcad": 466,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T19:01:03.013Z",
+    "eleitor_dados": {
+      "numcad": 466,
+      "nomfun": "JOSE RODRIGUES TAVARES"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 134,
+    "eleitor_numcad": 51,
+    "candidato_numcad": "51",
+    "data_voto": "2026-01-23T19:02:19.333Z",
+    "eleitor_dados": {
+      "numcad": 51,
+      "nomfun": "ANDRE DOS SANTOS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 135,
+    "eleitor_numcad": 711,
+    "candidato_numcad": "115",
+    "data_voto": "2026-01-23T19:05:13.362Z",
+    "eleitor_dados": {
+      "numcad": 711,
+      "nomfun": "ADRIANO SOUSA E SILVA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 136,
+    "eleitor_numcad": 286,
+    "candidato_numcad": "51",
+    "data_voto": "2026-01-23T19:08:35.416Z",
+    "eleitor_dados": {
+      "numcad": 286,
+      "nomfun": "ERINALDO DOS SANTOS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 137,
+    "eleitor_numcad": 24,
+    "candidato_numcad": "135",
+    "data_voto": "2026-01-23T19:09:49.498Z",
+    "eleitor_dados": {
+      "numcad": 24,
+      "nomfun": "FABIOLA MARCIA FERNANDES DA SILVA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 138,
+    "eleitor_numcad": 748,
+    "candidato_numcad": "74",
+    "data_voto": "2026-01-23T19:10:47.195Z",
+    "eleitor_dados": {
+      "numcad": 748,
+      "nomfun": "JULIO CESAR RIBEIRO COSTA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 139,
+    "eleitor_numcad": 297,
+    "candidato_numcad": "51",
+    "data_voto": "2026-01-23T19:11:59.749Z",
+    "eleitor_dados": {
+      "numcad": 297,
+      "nomfun": "DECIO ANTONIO DE AVILA"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 140,
+    "eleitor_numcad": 2626,
+    "candidato_numcad": "135",
+    "data_voto": "2026-01-23T19:12:38.790Z",
+    "eleitor_dados": {
+      "numcad": 2626,
+      "nomfun": "MARIA EDUARDA RODOVALHO COUTINHO"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 141,
+    "eleitor_numcad": 368,
+    "candidato_numcad": "187",
+    "data_voto": "2026-01-23T19:16:48.164Z",
+    "eleitor_dados": {
+      "numcad": 368,
+      "nomfun": "IAGO MENEZES FLORENCIO"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 142,
+    "eleitor_numcad": 606,
+    "candidato_numcad": "135",
+    "data_voto": "2026-01-23T19:17:59.246Z",
+    "eleitor_dados": {
+      "numcad": 606,
+      "nomfun": "JONAS DA SILVA SANTOS"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 143,
+    "eleitor_numcad": 814,
+    "candidato_numcad": "135",
+    "data_voto": "2026-01-23T19:23:25.269Z",
+    "eleitor_dados": {
+      "numcad": 814,
+      "nomfun": "MARCELO NASCIMENTO"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 144,
+    "eleitor_numcad": 510,
+    "candidato_numcad": "156",
+    "data_voto": "2026-01-23T19:46:40.278Z",
+    "eleitor_dados": {
+      "numcad": 510,
+      "nomfun": "THAIS FERNANDA PEREIRA GOMES"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  },
+  {
+    "id": 145,
+    "eleitor_numcad": 548,
+    "candidato_numcad": "175",
+    "data_voto": "2026-01-23T19:47:41.440Z",
+    "eleitor_dados": {
+      "numcad": 548,
+      "nomfun": "BIANCA LEAL MACIEL"
+    },
+    "ip": "::ffff:192.168.1.131",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
+  }
+]

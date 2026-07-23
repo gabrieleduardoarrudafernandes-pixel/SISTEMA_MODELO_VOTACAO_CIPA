@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0;url=/votacao">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionando para Votacao</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+        .card {
+            background: #fff;
+            padding: 24px 28px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            max-width: 420px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #2d2f36;
+        }
+        p {
+            margin-bottom: 16px;
+            color: #555;
+        }
+        a {
+            color: #4c51bf;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Redirecionando para a votacao principal</h1>
+        <p>A interface oficial de votos agora e <strong>votacao.html</strong>. Caso nao seja redirecionado automaticamente, clique abaixo.</p>
+        <a href="/votacao">Ir para a votacao</a>
+    </div>
+    <script>
+        setTimeout(() => {
+            window.location.href = '/votacao';
+        }, 200);
+    </script>
+</body>
+</html>

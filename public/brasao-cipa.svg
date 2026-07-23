@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Círculo de fundo azul escuro -->
+  <circle cx="100" cy="100" r="95" fill="#003d7a" stroke="#ffd700" stroke-width="3"/>
+
+  <!-- Cruz verde da CIPA -->
+  <rect x="85" y="40" width="30" height="120" fill="#00c853"/>
+  <rect x="40" y="85" width="120" height="30" fill="#00c853"/>
+
+  <!-- Círculo central branco -->
+  <circle cx="100" cy="100" r="20" fill="white"/>
+
+  <!-- Texto CIPA -->
+  <text x="100" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffd700">CIPA</text>
+</svg>

@@ -1,0 +1,141 @@
+{
+  "timestamp": "2026-01-23T19:47:41.438Z",
+  "candidatos": [
+    {
+      "numcad": "NULO",
+      "numcpf": null,
+      "nomfun": "VOTO NULO",
+      "titcar": "Voto em Branco/Nulo",
+      "datnas": null,
+      "voto": 8,
+      "ativo": "S",
+      "data_criacao": "2025-12-04T13:24:08.441Z",
+      "isNullVote": true
+    },
+    {
+      "numcad": "71",
+      "numcpf": null,
+      "nomfun": "CLAUDENIR FAUSTO ARAUJO",
+      "titcar": "Operador de Maquina III",
+      "datnas": null,
+      "voto": 5,
+      "ativo": "S",
+      "data_criacao": "2026-01-14T19:06:12.044Z"
+    },
+    {
+      "numcad": "51",
+      "numcpf": null,
+      "nomfun": "ANDRE DOS SANTOS",
+      "titcar": "Lider de Produção",
+      "datnas": null,
+      "voto": 18,
+      "ativo": "S",
+      "data_criacao": "2026-01-14T19:07:41.003Z"
+    },
+    {
+      "numcad": "156",
+      "numcpf": null,
+      "nomfun": "RAILSON JOSE DA SILVA",
+      "titcar": "Lider de Setor",
+      "datnas": null,
+      "voto": 26,
+      "ativo": "S",
+      "data_criacao": "2026-01-14T19:07:57.202Z"
+    },
+    {
+      "numcad": "115",
+      "numcpf": null,
+      "nomfun": "JOEL BATISTA DOS SANTOS",
+      "titcar": "Ajudante de Produção III",
+      "datnas": null,
+      "voto": 27,
+      "ativo": "S",
+      "data_criacao": "2026-01-14T19:08:21.939Z"
+    },
+    {
+      "numcad": "122",
+      "numcpf": null,
+      "nomfun": "JULIO CESAR PEREIRA",
+      "titcar": "Ajudante de Produção III",
+      "datnas": null,
+      "voto": 2,
+      "ativo": "S",
+      "data_criacao": "2026-01-14T19:08:31.779Z"
+    },
+    {
+      "numcad": "189",
+      "numcpf": null,
+      "nomfun": "ADENIVALDO FERREIRA DA SILVA",
+      "titcar": "Auxiliar de Expedição II",
+      "datnas": null,
+      "voto": 10,
+      "ativo": "S",
+      "data_criacao": "2026-01-14T19:08:45.569Z"
+    },
+    {
+      "numcad": "253",
+      "numcpf": null,
+      "nomfun": "WELDER DE OLIVEIRA",
+      "titcar": "Ajudante de Produção III",
+      "datnas": null,
+      "voto": 7,
+      "ativo": "S",
+      "data_criacao": "2026-01-14T19:14:34.166Z"
+    },
+    {
+      "numcad": "246",
+      "numcpf": null,
+      "nomfun": "CLEBSON OLIVEIRA NASCIMENTO",
+      "titcar": "Fundidor peças pequenas (Ceram)",
+      "datnas": null,
+      "voto": 3,
+      "ativo": "S",
+      "data_criacao": "2026-01-14T19:14:43.501Z"
+    },
+    {
+      "numcad": "175",
+      "numcpf": null,
+      "nomfun": "VALDIR PEDRO DA SILVA",
+      "titcar": "Supervisor Controle Qualidade",
+      "datnas": null,
+      "voto": 10,
+      "ativo": "S",
+      "data_criacao": "2026-01-14T19:14:50.774Z"
+    },
+    {
+      "numcad": "187",
+      "numcpf": null,
+      "nomfun": "ADEMILSON ROSA DOS SANTOS",
+      "titcar": "Fundidor (Louças)",
+      "datnas": null,
+      "voto": 7,
+      "ativo": "S",
+      "data_criacao": "2026-01-15T13:57:57.446Z"
+    },
+    {
+      "numcad": "74",
+      "numcpf": null,
+      "nomfun": "DALZIRIA DA SILVA LIMA",
+      "titcar": "Fundidor peças pequenas (Ceram)",
+      "datnas": null,
+      "voto": 5,
+      "ativo": "S",
+      "data_criacao": "2026-01-15T13:58:05.858Z"
+    },
+    {
+      "numcad": "135",
+      "numcpf": null,
+      "nomfun": "MARCIO MARQUES DA SILVA",
+      "titcar": "Lider de Manutenção",
+      "datnas": null,
+      "voto": 17,
+      "ativo": "S",
+      "data_criacao": "2026-01-19T13:40:05.011Z"
+    }
+  ],
+  "metadata": {
+    "total_candidatos": 13,
+    "sistema": "CIPA-Votacao",
+    "versao": "1.0.0"
+  }
+}

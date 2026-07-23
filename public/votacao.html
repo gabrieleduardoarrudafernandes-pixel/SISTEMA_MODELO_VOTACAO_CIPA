@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votação - Sistema de Votação Ônix</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dashboard-page">
+
+    <div class="navbar">
+        <div class="nav-left">
+            <a href="#" class="site-logo">
+                <img src="/4.jpg" alt="Logo" style="height: 40px; border-radius: 6px;">
+            </a>
+        </div>
+        <div class="nav-right">
+            <div class="user-profile">
+                <div class="user-welcome" style="margin-right: 5px; font-weight: 400; font-size: 0.9em; color: #666;">
+                    Bem-vindo,</div>
+                <div class="user-name" id="userName">Carregando...</div>
+            </div>
+            <button class="btn-logout" onclick="logout()">SAIR</button>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div id="message" class="message"></div>
+        <div id="loading" style="text-align: center; padding: 40px; color: #666;">Carregando sistema de votação...</div>
+
+        <!-- Candidates Grid -->
+        <div class="candidates-grid" id="candidatesGrid"></div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal-overlay" id="voteModal">
+        <div class="modal">
+            <h3>Confirmar Voto</h3>
+            <p>Você deseja confirmar seu voto em:</p>
+            <h2 id="modalCandidateName" style="color: var(--primary-teal); margin: 15px 0;">Nome Candidato</h2>
+            <div class="modal-buttons">
+                <button class="btn-cancel" onclick="closeModal()">Cancelar</button>
+                <button class="btn-confirm" onclick="confirmVote()">CONFIRMAR</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedCandidate = null;
+        let userHasVoted = false;
+
+        // Init
+        document.addEventListener('DOMContentLoaded', () => {
+            checkAuth();
+        });
+
+        // Check Auth & Load Data
+        async function checkAuth() {
+            try {
+                const userRes = await fetch('/api/user');
+                if (userRes.ok) {
+                    const user = await userRes.json();
+                    document.getElementById('userName').textContent = user.nomfun;
+
+                    // Check if voted
+                    const voteRes = await fetch('/api/verificar-voto');
+                    const voteData = await voteRes.json();
+                    userHasVoted = voteData.ja_votou;
+
+                    if (userHasVoted) {
+                        showMessage('⚠️ Você já registrou seu voto. Confira abaixo sua escolha.', 'warning');
+                    }
+
+                    loadCandidates();
+                } else {
+                    window.location.href = '/login';
+                }
+            } catch (e) {
+                console.error(e);
+                window.location.href = '/login';
+            }
+        }
+
+        // Load Candidates
+        async function loadCandidates() {
+            try {
+                const res = await fetch('/api/candidatos');
+                let candidates = await res.json();
+
+                document.getElementById('loading').style.display = 'none';
+
+                // Find user's vote if they voted
+                let userVoteId = null;
+                if (userHasVoted) {
+                    const voteFileRes = await fetch('/api/votos-eleitor');
+                    if (voteFileRes.ok) {
+                        const voteFileData = await voteFileRes.json();
+                        if (voteFileData.voto_registrado) {
+                            userVoteId = voteFileData.candidato_numcad;
+                        }
+                    }
+                }
+
+                renderCandidatesGrid(candidates, userVoteId);
+
+            } catch (error) {
+                console.error(error);
+                document.getElementById('loading').innerHTML = 'Erro ao carregar dados.';
+            }
+        }
+
+        // Render Candidates Grid
+        function renderCandidatesGrid(candidates, userVoteId) {
+            const grid = document.getElementById('candidatesGrid');
+            grid.innerHTML = '';
+
+            candidates.forEach(c => {
+                const isVoted = (userVoteId === c.numcad);
+                const isDisabled = userHasVoted;
+                const isNullVote = (c.numcad === 'NULO');
+
+                const div = document.createElement('div');
+                div.className = `candidate-card ${isVoted ? 'voted' : ''} ${isNullVote ? 'null-vote-card' : ''}`;
+
+                // Special styling for null vote
+                if (isNullVote) {
+                    div.innerHTML = `
+                        <div class="candidate-body">
+                            <div class="candidate-photo-wrapper null-vote-photo">
+                                <div style="width:100%;height:100%;background:#f0f0f0;border:2px dashed #ccc;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;">
+                                    <span style="font-size:50px;color:#999;">👤</span>
+                                    <div style="position:absolute;bottom:5px;right:5px;background:#ff4444;color:white;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;border:2px solid #fff;">✖</div>
+                                </div>
+                            </div>
+                            <div class="candidate-name">VOTO NULO</div>
+                            <div class="candidate-sector">Anular voto</div>
+
+                            <button class="btn-vote btn-null-vote ${isVoted ? 'voted' : ''}"
+                                ${isDisabled ? 'disabled' : ''}
+                                onclick="openModal('${c.numcad}', 'VOTO NULO')"
+                            >
+                                ${isVoted ? 'VOTO REGISTRADO' : 'ANULAR VOTO'}
+                            </button>
+                        </div>
+                    `;
+                } else {
+                    div.innerHTML = `
+                        <div class="candidate-body">
+                            <div class="candidate-photo-wrapper">
+                                ${c.foto ? `<img src="${c.foto}" class="candidate-photo" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2NjYyIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIj48L2NpcmNsZT48cGF0aCBkPSJNMTIgMThhNSA1IDAgMCAwIDUtNVY4YTUgNSAwIDAgMC01LTVhNSA1IDAgMCAwLTUgNXY1YTUgNSAwIDAgMCA1IDV6Ij48L3BhdGg+PC9zdmc+'">` :
+                            `<div style="width:100%;height:100%;background:#eee;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#999;font-size:40px;">👤</div>`}
+                            </div>
+                            <div class="candidate-name">${c.nomfun}</div>
+                            <div class="candidate-sector">${c.titcar || 'Setor não informado'}</div>
+
+                            <button class="btn-vote ${isVoted ? 'voted' : ''}"
+                                ${isDisabled ? 'disabled' : ''}
+                                onclick="openModal('${c.numcad}', '${c.nomfun.replace(/'/g, "\\'")}')"
+                            >
+                                ${isVoted ? 'VOTO REGISTRADO' : 'VOTAR'}
+                            </button>
+                        </div>
+                    `;
+                }
+                grid.appendChild(div);
+            });
+        }
+
+        // Modal Handling
+        function openModal(id, name) {
+            selectedCandidate = { id, name };
+            document.getElementById('modalCandidateName').textContent = name;
+            document.getElementById('voteModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('voteModal').style.display = 'none';
+            selectedCandidate = null;
+        }
+
+        // Actions
+        async function confirmVote() {
+            if (!selectedCandidate) return;
+
+            const btnConfirm = document.querySelector('.btn-confirm');
+            btnConfirm.textContent = 'Registrando...';
+            btnConfirm.disabled = true;
+
+            // Salvar nome do candidato antes da requisição
+            const candidateName = selectedCandidate.name;
+
+            try {
+                const res = await fetch('/api/votar', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ numcad: selectedCandidate.id })
+                });
+
+                const result = await res.json();
+
+                if (result.success) {
+                    // Tocar som da urna
+                    playUrnaSound();
+
+                    userHasVoted = true;
+                    closeModal();
+                    showMessage(`✅ Voto em ${candidateName} confirmado!`, 'success');
+                    loadCandidates(); // Refresh UI
+                } else {
+                    showMessage(result.error || 'Erro ao votar', 'error');
+                    closeModal();
+                }
+            } catch (e) {
+                console.error(e);
+                showMessage('Erro de conexão', 'error');
+                closeModal();
+            } finally {
+                btnConfirm.textContent = 'CONFIRMAR';
+                btnConfirm.disabled = false;
+                selectedCandidate = null; // Limpar variável
+            }
+        }
+
+        function showMessage(text, type) {
+            const msg = document.getElementById('message');
+            msg.textContent = text;
+            msg.className = `message ${type}`;
+            msg.style.display = 'block';
+            if (type !== 'warning') {
+                setTimeout(() => msg.style.display = 'none', 5000);
+            }
+        }
+
+        // Função para tocar som da urna
+        function playUrnaSound() {
+            const audio = new Audio('/som-urna.mp3');
+            audio.play().catch(e => console.error('Erro ao tocar som:', e));
+        }
+
+        async function logout() {
+            await fetch('/api/logout', { method: 'POST' });
+            window.location.href = '/login';
+        }
+    </script>
+</body>
+
+</html>

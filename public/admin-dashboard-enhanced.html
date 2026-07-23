@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Sistema de Votação SIPA</title>
+    <link rel="icon" type="image/jpeg" href="4.jpg">
+    <!-- Bibliotecas para Excel e PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Chart.js para gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-teal: #2da4a4;
+            --primary-teal-dark: #004d4d;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-light);
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--text-main);
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 20px 30px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header h1 {
+            color: var(--text-main);
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .admin-badge {
+            background: var(--primary-teal);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .logout-btn {
+            background: var(--white);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .logout-btn:hover {
+            background: var(--bg-light);
+            border-color: #ccc;
+        }
+
+        /* Container Grid */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 968px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Cards */
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            padding: 25px;
+            border: 1px solid var(--border-color);
+        }
+
+        .card h2 {
+            color: var(--text-main);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-teal);
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 18px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 0.9em;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.2s ease;
+            background: var(--white);
+            color: var(--text-main);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-teal);
+            box-shadow: 0 0 0 3px rgba(45, 164, 164, 0.15);
+        }
+
+        .form-group input:disabled {
+            background: var(--bg-light);
+            color: var(--text-muted);
+            cursor: not-allowed;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        /* Autocomplete */
+        .autocomplete-list {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+            box-shadow: var(--shadow-md);
+        }
+
+        .autocomplete-item {
+            padding: 12px 14px;
+            cursor: pointer;
+            transition: background 0.15s ease;
+            border-bottom: 1px solid #f0f0f0;
+            color: var(--text-main);
+        }
+
+        .autocomplete-item:hover {
+            background: var(--bg-light);
+        }
+
+        .autocomplete-item.selected {
+            background: var(--primary-teal);
+            color: white;
+        }
+
+        .autocomplete-item strong {
+            color: var(--primary-teal);
+        }
+
+        .autocomplete-item.selected strong {
+            color: white;
+        }
+
+        /* Buttons */
+        .btn {
+            background: var(--primary-teal-dark);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+
+        .btn:hover:not(:disabled) {
+            background: #003838;
+            transform: translateY(-1px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover:not(:disabled) {
+            background: #5a6268;
+        }
+
+        .btn-danger {
+            background: #dc3545;
+            padding: 6px 12px;
+            font-size: 13px;
+            width: auto;
+        }
+
+        .btn-danger:hover:not(:disabled) {
+            background: #c82333;
+        }
+
+        /* Messages */
+        .message {
+            background: #d4edda;
+            color: #155724;
+            padding: 14px 18px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            display: none;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border-color: #f5c6cb;
+        }
+
+        .message.warning {
+            background: #fff3cd;
+            color: #856404;
+            border-color: #ffeeba;
+        }
+
+        /* Found Info */
+        .found-info {
+            background: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 18px;
+            display: none;
+        }
+
+        .found-info.show {
+            display: block;
+        }
+
+        .found-info h4 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        .found-info p {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: var(--primary-teal-dark);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 2.2em;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .stat-card p {
+            font-size: 0.85em;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .quick-btn {
+            flex: 1;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: all 0.2s ease;
+            color: white;
+        }
+
+        .refresh-btn {
+            background: #3498db;
+        }
+
+        .refresh-btn:hover {
+            background: #2980b9;
+        }
+
+        .export-btn {
+            background: #27ae60;
+        }
+
+        .export-btn:hover {
+            background: #229954;
+        }
+
+        .clear-btn {
+            background: #e67e22;
+        }
+
+        .clear-btn:hover {
+            background: #d35400;
+        }
+
+        /* Export Dropdown */
+        .export-dropdown {
+            position: relative;
+            flex: 1;
+        }
+
+        .export-dropdown-content {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--white);
+            min-width: 140px;
+            box-shadow: var(--shadow-md);
+            z-index: 1000;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        .export-dropdown-content button {
+            color: var(--text-main);
+            padding: 12px 16px;
+            display: block;
+            width: 100%;
+            border: none;
+            background: none;
+            cursor: pointer;
+            text-align: left;
+            font-size: 14px;
+            transition: background 0.15s;
+        }
+
+        .export-dropdown-content button:hover {
+            background: var(--bg-light);
+        }
+
+        /* Table */
+        .candidates-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .candidates-table th {
+            background: var(--primary-teal-dark);
+            color: white;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .candidates-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #f0f0f0;
+            color: var(--text-main);
+        }
+
+        .candidates-table tr:hover td {
+            background: var(--bg-light);
+        }
+
+        .candidates-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Badges */
+        .vote-badge {
+            background: var(--primary-teal);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.1em;
+            display: inline-block;
+        }
+
+        .status-badge {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.8em;
+        }
+
+        .status-active {
+            background: #28a745;
+            color: white;
+        }
+
+        .cargo-badge {
+            background: #6c757d;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75em;
+            font-weight: 500;
+            margin-left: 8px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 6px;
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+        }
+
+        /* Instructions */
+        .instructions {
+            background: #e3f2fd;
+            border: 1px solid #bbdefb;
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 18px;
+        }
+
+        .instructions h4 {
+            color: #1565c0;
+            margin-bottom: 8px;
+        }
+
+        .instructions ul {
+            margin-left: 18px;
+            color: var(--text-main);
+        }
+
+        .instructions li {
+            margin-bottom: 4px;
+        }
+
+        /* Estilos do Gráfico */
+        .chart-card {
+            margin-top: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        }
+
+        .chart-card h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .chart-type-toggle {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .chart-toggle-btn {
+            padding: 10px 20px;
+            border: 2px solid var(--primary);
+            background: white;
+            color: var(--primary);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .chart-toggle-btn:hover {
+            background: rgba(21, 101, 192, 0.1);
+        }
+
+        .chart-toggle-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 350px;
+            width: 100%;
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .chart-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+            justify-content: center;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+            padding: 5px 12px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .legend-color {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+        }
+
+        .legend-percentage {
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-actions {
+                flex-direction: column;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .candidates-table th,
+            .candidates-table td {
+                padding: 10px 12px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <img src="/4.jpg" alt="Logo" style="height: 40px; border-radius: 6px;">
+            <h1>Painel Administrativo CIPA</h1>
+        </div>
+        <div class="user-info">
+            <div class="admin-badge">🛡️ ADMINISTRADOR</div>
+            <button class="logout-btn" onclick="logout()">SAIR</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2>➕ Cadastrar Novo Candidato</h2>
+
+            <div id="message" class="message"></div>
+            <div id="foundInfo" class="found-info">
+                <h4>✅ Colaborador Encontrado</h4>
+                <p><strong>Nome:</strong> <span id="foundName"></span></p>
+                <p><strong>Cargo:</strong> <span id="foundCargo"></span></p>
+                <p><strong>Matrícula:</strong> <span id="foundNumcad"></span></p>
+            </div>
+
+
+            <form id="candidateForm">
+                <div class="form-group">
+                    <label for="numcad">🏢 Colaborador (Matrícula ou Nome) *</label>
+                    <input type="text" id="numcad" name="numcad" required
+                        placeholder="Digite a matrícula ou nome do colaborador..." autocomplete="off">
+                    <div id="autocompleteList" class="autocomplete-list"></div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nomfun">👤 Nome Completo *</label>
+                        <input type="text" id="nomfun" name="nomfun" required placeholder="Nome completo do colaborador"
+                            disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cargo">💼 Cargo</label>
+                        <input type="text" id="cargo" name="cargo" disabled placeholder="Cargo do colaborador">
+                    </div>
+                </div>
+
+
+                <button type="submit" class="btn" id="submitBtn" disabled>
+                    🚀 Cadastrar Candidato
+                </button>
+
+                <div style="margin-top: 15px; display: flex; gap: 10px;">
+                    <button type="button" class="btn btn-secondary" onclick="clearForm()" style="flex: 1;">
+                        🔄 Limpar Formulário
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>📊 Candidatos Cadastrados</h2>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 id="totalCandidates">0</h3>
+                    <p>Total Candidatos</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="totalVotes">0</h3>
+                    <p>Total Votos</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="activeCandidates">0</h3>
+                    <p>Candidatos Ativos</p>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <button class="quick-btn refresh-btn" onclick="loadCandidates()">🔄 Atualizar</button>
+                <div class="export-dropdown">
+                    <button class="quick-btn export-btn" onclick="toggleExportDropdown()">📥 Exportar ▼</button>
+                    <div id="exportDropdown" class="export-dropdown-content" style="display: none;">
+                        <button onclick="exportToExcel()">📊 Excel (Candidatos)</button>
+                        <button onclick="exportToPDF()">📄 PDF (Candidatos)</button>
+                        <button onclick="exportVotersToPDF()">📋 PDF (Eleitores que Votaram)</button>
+                    </div>
+                </div>
+                <button class="quick-btn clear-btn" onclick="clearForm()">🗑️ Limpar</button>
+            </div>
+
+            <div id="loading" class="loading">Carregando candidatos...</div>
+
+            <table class="candidates-table" id="candidatesTable" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Matrícula</th>
+                        <th>Nome</th>
+                        <th>Cargo</th>
+                        <th>Votos</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="candidatesBody">
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Card do Gráfico de Votação em Tempo Real -->
+        <div class="card chart-card">
+            <h2>📊 Votação em Tempo Real</h2>
+            <div class="chart-type-toggle">
+                <button class="chart-toggle-btn active" onclick="toggleChartType('bar')" id="btnBarChart">📊
+                    Barras</button>
+                <button class="chart-toggle-btn" onclick="toggleChartType('pie')" id="btnPieChart">🥧 Pizza</button>
+            </div>
+            <div class="chart-container">
+                <canvas id="votingChart"></canvas>
+            </div>
+            <div class="chart-legend" id="chartLegend"></div>
+        </div>
+    </div>
+
+    <script>
+        let candidates = [];
+        let currentSearch = null;
+        let searchTimeout = null;
+
+        // Variáveis do gráfico
+        let votingChart = null;
+        let currentChartType = 'bar';
+        const chartColors = [
+            '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF',
+            '#FF9F40', '#7CFC00', '#00CED1', '#FF69B4', '#8B4513',
+            '#20B2AA', '#FF4500', '#9400D3', '#00FA9A', '#DC143C'
+        ];
+
+        // Mostrar mensagem
+        function showMessage(text, type = 'success') {
+            const messageEl = document.getElementById('message');
+            messageEl.textContent = text;
+            messageEl.className = 'message';
+            if (type === 'error') {
+                messageEl.className = 'message error';
+            } else if (type === 'warning') {
+                messageEl.className = 'message warning';
+            }
+            messageEl.style.display = 'block';
+
+            setTimeout(() => {
+                messageEl.style.display = 'none';
+            }, 5000);
+        }
+
+
+        // Buscar colaboradores na R034FUN
+        async function searchCollaborators(search) {
+            if (search.length < 3) return [];
+
+            try {
+                const response = await fetch(`/api/search-collaborators?q=${encodeURIComponent(search)}`);
+                if (!response.ok) return [];
+                return await response.json();
+            } catch (error) {
+                console.error('Erro na busca:', error);
+                return [];
+            }
+        }
+
+        // Exibir autocomplete
+        function showAutocomplete(results) {
+            const autocompleteList = document.getElementById('autocompleteList');
+
+            if (results.length === 0) {
+                autocompleteList.style.display = 'none';
+                return;
+            }
+
+            autocompleteList.innerHTML = '';
+            results.forEach((result, index) => {
+                const item = document.createElement('div');
+                item.className = 'autocomplete-item';
+                item.innerHTML = `
+                    <strong>${result.numcad}</strong> - ${result.nomfun}
+                    ${result.titcar ? `<span class="cargo-badge">${result.titcar}</span>` : ''}
+                `;
+                item.onclick = () => selectCollaborator(result);
+                autocompleteList.appendChild(item);
+            });
+
+            autocompleteList.style.display = 'block';
+        }
+
+        // Selecionar colaborador
+        function selectCollaborator(collaborator) {
+            document.getElementById('numcad').value = collaborator.numcad;
+            document.getElementById('nomfun').value = collaborator.nomfun;
+            document.getElementById('cargo').value = collaborator.titcar || '';
+
+            // Habilitar campos
+            document.getElementById('nomfun').disabled = false;
+            document.getElementById('cargo').disabled = false;
+            document.getElementById('submitBtn').disabled = false;
+            document.getElementById('submitBtn').style.opacity = '1';
+            document.getElementById('submitBtn').style.cursor = 'pointer';
+
+            // Exibir informações encontradas
+            const foundInfo = document.getElementById('foundInfo');
+            foundInfo.classList.add('show');
+            document.getElementById('foundName').textContent = collaborator.nomfun;
+            document.getElementById('foundCargo').textContent = collaborator.titcar || 'Não informado';
+            document.getElementById('foundNumcad').textContent = collaborator.numcad;
+
+            // Esconder autocomplete
+            document.getElementById('autocompleteList').style.display = 'none';
+
+            showMessage('✅ Colaborador encontrado! Você pode editar os dados e cadastrar.', 'success');
+        }
+
+        // Limpar formulário
+        function clearForm() {
+            document.getElementById('candidateForm').reset();
+            document.getElementById('nomfun').disabled = true;
+            document.getElementById('cargo').disabled = true;
+            document.getElementById('submitBtn').disabled = true;
+            document.getElementById('submitBtn').style.opacity = '0.6';
+            document.getElementById('submitBtn').style.cursor = 'not-allowed';
+            document.getElementById('foundInfo').classList.remove('show');
+            document.getElementById('autocompleteList').style.display = 'none';
+            document.getElementById('numcad').focus();
+            currentSearch = null;
+        }
+
+        // Evento de digitação no campo NUMCAD
+        document.getElementById('numcad').addEventListener('input', async function (e) {
+            const search = e.target.value.trim();
+
+            // Limpar timeout anterior
+            if (searchTimeout) {
+                clearTimeout(searchTimeout);
+            }
+
+            // Limpar informações se o campo for limpo
+            if (search.length === 0) {
+                clearForm();
+                return;
+            }
+
+            // Configurar novo timeout
+            searchTimeout = setTimeout(async () => {
+                if (search !== currentSearch) {
+                    currentSearch = search;
+                    const results = await searchCollaborators(search);
+                    showAutocomplete(results);
+                }
+            }, 500); // Aguardar 500ms para buscar
+        });
+
+        // Fechar autocomplete ao clicar fora
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.form-group')) {
+                document.getElementById('autocompleteList').style.display = 'none';
+            }
+        });
+
+        // Navegação com teclado no autocomplete
+        document.addEventListener('keydown', function (e) {
+            const autocompleteList = document.getElementById('autocompleteList');
+            const items = autocompleteList.querySelectorAll('.autocomplete-item');
+            const selected = autocompleteList.querySelector('.selected');
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (selected) {
+                    selected.classList.remove('selected');
+                    const next = selected.nextElementSibling;
+                    if (next) next.classList.add('selected');
+                } else if (items.length > 0) {
+                    items[0].classList.add('selected');
+                }
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (selected) {
+                    selected.classList.remove('selected');
+                    const prev = selected.previousElementSibling;
+                    if (prev) prev.classList.add('selected');
+                } else if (items.length > 0) {
+                    items[items.length - 1].classList.add('selected');
+                }
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (selected) {
+                    selected.click();
+                }
+            } else if (e.key === 'Escape') {
+                autocompleteList.style.display = 'none';
+            }
+        });
+
+        // Carregar candidatos
+        async function loadCandidates() {
+            try {
+                const response = await fetch('/api/admin/candidates');
+                candidates = await response.json();
+
+                document.getElementById('loading').style.display = 'none';
+                const table = document.getElementById('candidatesTable');
+                table.style.display = 'table';
+
+                const tbody = document.getElementById('candidatesBody');
+                tbody.innerHTML = '';
+
+                if (candidates.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 30px;">Nenhum candidato cadastrado</td></tr>';
+                    updateStats([]);
+                    return;
+                }
+
+                candidates.forEach(candidate => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td><strong>${candidate.numcad}</strong></td>
+                        <td>${candidate.nomfun}</td>
+                        <td>${candidate.titcar || '-'}</td>
+                        <td><span class="vote-badge">${candidate.voto} votos</span></td>
+                        <td><span class="status-badge status-active">✅ Ativo</span></td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn-danger" onclick="deleteCandidate('${candidate.numcad}', '${candidate.nomfun.replace(/'/g, "\\'")}')">
+                                    🗑️ Excluir
+                                </button>
+                            </div>
+                        </td>
+                    `;
+                    tbody.appendChild(row);
+                });
+
+                updateStats(candidates);
+
+            } catch (error) {
+                console.error('Erro ao carregar candidatos:', error);
+                document.getElementById('loading').innerHTML = 'Erro ao carregar candidatos. Tente novamente.';
+                updateStats([]);
+            }
+        }
+
+        // Atualizar estatísticas
+        function updateStats(candidates) {
+            const total = candidates.length;
+            const totalVotes = candidates.reduce((sum, c) => sum + c.voto, 0);
+            const active = candidates.filter(c => c.ativo === 'S').length;
+
+            document.getElementById('totalCandidates').textContent = total;
+            document.getElementById('totalVotes').textContent = totalVotes;
+            document.getElementById('activeCandidates').textContent = active;
+
+            // Atualizar gráfico
+            updateChart(candidates);
+        }
+
+        // Inicializar gráfico
+        function initChart() {
+            const ctx = document.getElementById('votingChart').getContext('2d');
+            votingChart = new Chart(ctx, {
+                type: currentChartType,
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Votos',
+                        data: [],
+                        backgroundColor: chartColors,
+                        borderColor: chartColors.map(c => c),
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                    const value = context.raw;
+                                    const percentage = total > 0 ? ((value / total) * 100).toFixed(1) : 0;
+                                    return `${value} votos (${percentage}%)`;
+                                }
+                            }
+                        }
+                    },
+                    scales: currentChartType === 'bar' ? {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1
+                            }
+                        }
+                    } : {}
+                }
+            });
+        }
+
+        // Atualizar gráfico
+        function updateChart(candidatesData) {
+            if (!votingChart) {
+                initChart();
+            }
+
+            // Filtrar apenas candidatos ativos com votos ou sem votos para mostrar todos
+            const activeCandidates = candidatesData.filter(c => c.ativo === 'S' && c.numcad !== 'NULO');
+
+            // Ordenar por votos (maior primeiro)
+            activeCandidates.sort((a, b) => b.voto - a.voto);
+
+            const labels = activeCandidates.map(c => {
+                const name = c.nomfun || 'Sem nome';
+                return name.length > 15 ? name.substring(0, 15) + '...' : name;
+            });
+            const data = activeCandidates.map(c => c.voto || 0);
+            const totalVotes = data.reduce((a, b) => a + b, 0);
+
+            votingChart.data.labels = labels;
+            votingChart.data.datasets[0].data = data;
+            votingChart.data.datasets[0].backgroundColor = chartColors.slice(0, data.length);
+            votingChart.update('none');
+
+            // Atualizar legenda customizada
+            const legendEl = document.getElementById('chartLegend');
+            legendEl.innerHTML = activeCandidates.map((c, i) => {
+                const percentage = totalVotes > 0 ? ((c.voto / totalVotes) * 100).toFixed(1) : 0;
+                const name = c.nomfun || 'Sem nome';
+                const shortName = name.length > 20 ? name.substring(0, 20) + '...' : name;
+                return `
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: ${chartColors[i % chartColors.length]}"></div>
+                        <span>${shortName}</span>
+                        <span class="legend-percentage">${c.voto} (${percentage}%)</span>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Alternar tipo de gráfico
+        function toggleChartType(type) {
+            if (type === currentChartType) return;
+
+            currentChartType = type;
+
+            // Atualizar botões
+            document.getElementById('btnBarChart').classList.toggle('active', type === 'bar');
+            document.getElementById('btnPieChart').classList.toggle('active', type === 'pie');
+
+            // Destruir gráfico atual e recriar
+            if (votingChart) {
+                votingChart.destroy();
+                votingChart = null;
+            }
+
+            initChart();
+            updateChart(candidates);
+        }
+
+        // Cadastrar candidato
+        document.getElementById('candidateForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(e.target);
+            const data = {
+                numcad: formData.get('numcad').trim(),
+                nomfun: formData.get('nomfun').trim(),
+                titcar: formData.get('cargo').trim()
+            };
+
+            if (!data.numcad || !data.nomfun) {
+                showMessage('Matrícula e nome são obrigatórios', 'error');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/admin/candidates', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showMessage('✅ Candidato cadastrado com sucesso!', 'success');
+                    clearForm();
+                    loadCandidates(); // Atualizar lista
+                } else {
+                    showMessage('❌ ' + (result.error || 'Erro ao cadastrar candidato'), 'error');
+                }
+            } catch (error) {
+                console.error('Erro ao cadastrar candidato:', error);
+                showMessage('❌ Erro ao cadastrar candidato. Tente novamente.', 'error');
+            }
+        });
+
+        // Toggle dropdown de exportação
+        function toggleExportDropdown() {
+            const dropdown = document.getElementById('exportDropdown');
+            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Fechar dropdown quando clicar fora
+        document.addEventListener('click', function (event) {
+            const dropdown = document.getElementById('exportDropdown');
+            const exportBtn = document.querySelector('.export-btn');
+
+            if (!exportBtn.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+
+        // Exportar para Excel com logo CIPA
+        async function exportToExcel() {
+            if (candidates.length === 0) {
+                showMessage('Nenhum dado para exportar', 'warning');
+                return;
+            }
+
+            try {
+                // Criar workbook
+                const ws = XLSX.utils.json_to_sheet([]);
+                const wb = XLSX.utils.book_new();
+
+                // Adicionar logo CIPA (convertendo para base64)
+                const logoResponse = await fetch('cipa.jpg');
+                const logoBlob = await logoResponse.blob();
+                const logoBase64 = await new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onloadend = () => resolve(reader.result.split(',')[1]);
+                    reader.onerror = reject;
+                    reader.readAsDataURL(logoBlob);
+                });
+
+                // Cabeçalho com informações
+                XLSX.utils.sheet_add_aoa(ws, [
+                    ['SISTEMA DE VOTAÇÃO CIPA'],
+                    ['Relatório de Candidatos e Votação'],
+                    [`Data de Geração: ${new Date().toLocaleDateString('pt-BR')}`],
+                    [`Gerado por: ${getCookie('admin_session') || 'Administrador'}`],
+                    []
+                ], { origin: 'A1' });
+
+                // Cabeçalhos da tabela
+                XLSX.utils.sheet_add_aoa(ws, [
+                    ['Matrícula', 'Nome Completo', 'Cargo', 'CPF', 'Data Admissão', 'Votos Recebidos', 'Status']
+                ], { origin: 'A6' });
+
+                // Dados dos candidatos
+                const dataRows = candidates.map(c => [
+                    c.numcad,
+                    c.nomfun || '',
+                    c.titcar || '',
+                    c.numcpf || '',
+                    c.datadm ? new Date(c.datadm).toLocaleDateString('pt-BR') : '',
+                    c.voto || 0,
+                    c.ativo === 'S' ? 'Ativo' : 'Inativo'
+                ]);
+
+                XLSX.utils.sheet_add_json(ws, dataRows, {
+                    origin: 'A7',
+                    skipHeader: true
+                });
+
+                // Estilização
+                const range = XLSX.utils.decode_range(ws['!ref']);
+
+                // Ajustar largura das colunas
+                ws['!cols'] = [
+                    { width: 15 }, // Matrícula
+                    { width: 40 }, // Nome
+                    { width: 30 }, // Cargo
+                    { width: 20 }, // CPF
+                    { width: 15 }, // Data Admissão
+                    { width: 15 }, // Votos
+                    { width: 10 }  // Status
+                ];
+
+                // Adicionar worksheet ao workbook
+                XLSX.utils.book_append_sheet(wb, ws, 'Candidatos CIPA');
+
+                // Salvar arquivo
+                const fileName = `relatorio_candidatos_cipa_${new Date().toISOString().split('T')[0]}.xlsx`;
+                XLSX.writeFile(wb, fileName);
+
+                showMessage('✅ Arquivo Excel gerado com sucesso!', 'success');
+                toggleExportDropdown();
+            } catch (error) {
+                console.error('Erro ao exportar Excel:', error);
+                showMessage('❌ Erro ao gerar arquivo Excel', 'error');
+            }
+        }
+
+        // Exportar para PDF com marca d'água ONIX (4.jpg)
+        async function exportToPDF() {
+            if (candidates.length === 0) {
+                showMessage('Nenhum dado para exportar', 'warning');
+                return;
+            }
+
+            try {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+
+                // Carregar a imagem da marca d'água pdf.png da pasta ELEITORES
+                let watermarkImage = null;
+
+                // Função para converter imagem para formato compatível com jsPDF
+                async function loadWatermark() {
+                    return new Promise((resolve, reject) => {
+                        const img = new Image();
+                        img.crossOrigin = 'Anonymous';
+
+                        img.onload = function () {
+                            console.log('Imagem pdf.png carregada com sucesso:', img.width, 'x', img.height);
+
+                            // Criar canvas para processar imagem
+                            const canvas = document.createElement('canvas');
+                            canvas.width = img.width;
+                            canvas.height = img.height;
+                            const ctx = canvas.getContext('2d');
+
+                            // Desenhar imagem no canvas
+                            ctx.drawImage(img, 0, 0);
+
+                            // Converter para base64 (mantendo formato PNG)
+                            const dataURL = canvas.toDataURL('image/png', 0.9);
+                            console.log('Imagem pdf.png convertida para base64, tamanho:', dataURL.length);
+
+                            // Criar imagem para o PDF
+                            const pdfImg = new Image();
+                            pdfImg.onload = () => {
+                                watermarkImage = pdfImg;
+                                console.log('Imagem pdf.png preparada para PDF');
+                                resolve();
+                            };
+                            pdfImg.onerror = () => reject(new Error('Erro ao preparar imagem pdf.png para PDF'));
+                            pdfImg.src = dataURL;
+                        };
+
+                        img.onerror = function (e) {
+                            console.error('Erro ao carregar imagem pdf.png:', e);
+                            reject(new Error('Falha ao carregar imagem pdf.png'));
+                        };
+
+                        // Carregar a imagem pdf.png da pasta ELEITORES
+                        img.src = '/eleitores/fotos/pdf.png';
+                    });
+                }
+
+                // Carregar imagem
+                await loadWatermark().catch(err => {
+                    console.warn('Não foi possível carregar a marca d\'água, continuando sem ela:', err);
+                });
+
+                // Função para adicionar marca d'água da ONIX em todas as páginas
+                function addWatermark() {
+                    const pdfWidth = pdf.internal.pageSize.getWidth(); // 210mm (A4)
+                    const pdfHeight = pdf.internal.pageSize.getHeight(); // 297mm (A4)
+
+                    console.log('Adicionando marca d\'água, imagem carregada:', !!watermarkImage);
+
+                    // Tentar múltiplos métodos para adicionar a marca d'água
+                    if (watermarkImage) {
+                        try {
+                            // Método 1: Usar a imagem processada
+                            const canvas = document.createElement('canvas');
+                            canvas.width = watermarkImage.width;
+                            canvas.height = watermarkImage.height;
+                            const ctx = canvas.getContext('2d');
+                            ctx.drawImage(watermarkImage, 0, 0);
+                            const imageData = canvas.toDataURL('image/png', 0.9);
+
+                            pdf.addImage(imageData, 'PNG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST', 0.2);
+                            console.log('Marca d\'água adicionada com sucesso (método 1)');
+                        } catch (error) {
+                            console.warn('Erro no método 1, tentando método 2:', error);
+                            try {
+                                // Método 2: URL direta
+                                pdf.addImage('/eleitores/fotos/pdf.png', 'PNG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST', 0.2);
+                                console.log('Marca d\'água adicionada com sucesso (método 2)');
+                            } catch (error2) {
+                                console.warn('Erro no método 2, tentando método 3:', error2);
+                                try {
+                                    // Método 3: Base64 direto
+                                    pdf.addImage(watermarkImage.src, 'PNG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST', 0.2);
+                                    console.log('Marca d\'água adicionada com sucesso (método 3)');
+                                } catch (error3) {
+                                    console.error('Todos os métodos falharam:', error3);
+                                }
+                            }
+                        }
+                    }
+
+                    // Adicionar texto "CIPA" com transparência por cima
+                    pdf.setGState(new pdf.GState({ opacity: 0.08 }));
+                    pdf.setFontSize(80);
+                    pdf.setTextColor(200, 200, 200);
+                    const text = 'CIPA';
+                    const textWidth = pdf.getTextWidth(text);
+                    pdf.text(text, (pdfWidth - textWidth) / 2, pdfHeight / 2, { angle: 45 });
+                    pdf.setGState(new pdf.GState({ opacity: 1.0 }));
+                }
+
+                // Adicionar primeira página
+                addWatermark();
+
+                // Cabeçalho - TEXTO EM PRETO MAIS LEVE/SUAVE
+                pdf.setFontSize(20);
+                pdf.setTextColor(50, 50, 50); // PRETO SUAVE (RGB: 50,50,50)
+                pdf.setFont(undefined, 'bold');
+                pdf.text('SISTEMA DE VOTAÇÃO CIPA - 2026/2027', 105, 20, { align: 'center' });
+
+                pdf.setFontSize(16);
+                pdf.setTextColor(60, 60, 60); // PRETO CLARO (RGB: 60,60,60)
+                pdf.setFont(undefined, 'normal');
+                pdf.text('Relatório de Candidatos e Votação', 105, 30, { align: 'center' });
+
+                // Informações do relatório - PRETO MAIS CLARO
+                pdf.setFontSize(10);
+                pdf.setTextColor(70, 70, 70); // PRETO MAIS CLARO (RGB: 70,70,70)
+                pdf.text(`Data de Geração: ${new Date().toLocaleDateString('pt-BR')} ${new Date().toLocaleTimeString('pt-BR')}`, 105, 40, { align: 'center' });
+                pdf.text(`Total de Candidatos: ${candidates.length}`, 105, 46, { align: 'center' });
+
+                // Tabela de candidatos
+                let yPosition = 60;
+                const lineHeight = 8;
+                const pageHeight = pdf.internal.pageSize.getHeight();
+                const margin = 20;
+
+                // Cabeçalhos da tabela - PRETO SUAVE
+                pdf.setFontSize(10);
+                pdf.setFont(undefined, 'bold');
+                pdf.setTextColor(40, 40, 40); // PRETO MAIS SUAVE (RGB: 40,40,40)
+
+                const headers = ['Matrícula', 'Nome', 'Cargo', 'Votos', 'Status'];
+                const colWidths = [30, 70, 40, 20, 20];
+                let xPosition = margin;
+
+                headers.forEach((header, index) => {
+                    pdf.text(header, xPosition, yPosition);
+                    xPosition += colWidths[index];
+                });
+
+                yPosition += lineHeight + 2;
+                pdf.line(margin, yPosition, 190, yPosition);
+                yPosition += lineHeight;
+
+                // Dados dos candidatos - PRETO LEVE
+                pdf.setFont(undefined, 'normal');
+                pdf.setFontSize(9);
+                pdf.setTextColor(80, 80, 80); // PRETO LEVE (RGB: 80,80,80)
+
+                candidates.forEach((candidate, index) => {
+                    // Verificar se precisa de nova página
+                    if (yPosition > pageHeight - 30) {
+                        pdf.addPage();
+                        addWatermark();
+                        yPosition = 30;
+                        // Restaurar cor preto leve na nova página
+                        pdf.setTextColor(80, 80, 80); // PRETO LEVE (RGB: 80,80,80)
+                        pdf.setFontSize(9);
+                    }
+
+                    xPosition = margin;
+
+                    // Matrícula
+                    pdf.text(candidate.numcad || '', xPosition, yPosition);
+                    xPosition += colWidths[0];
+
+                    // Nome (truncar se necessário)
+                    const nome = candidate.nomfun || '';
+                    const maxNomeLength = 25;
+                    const truncatedNome = nome.length > maxNomeLength ? nome.substring(0, maxNomeLength) + '...' : nome;
+                    pdf.text(truncatedNome, xPosition, yPosition);
+                    xPosition += colWidths[1];
+
+                    // Cargo (truncar se necessário)
+                    const cargo = candidate.titcar || '';
+                    const maxCargoLength = 15;
+                    const truncatedCargo = cargo.length > maxCargoLength ? cargo.substring(0, maxCargoLength) + '...' : cargo;
+                    pdf.text(truncatedCargo, xPosition, yPosition);
+                    xPosition += colWidths[2];
+
+                    // Votos
+                    pdf.text(String(candidate.voto || 0), xPosition, yPosition);
+                    xPosition += colWidths[3];
+
+                    // Status
+                    pdf.text(candidate.ativo === 'S' ? 'Ativo' : 'Inativo', xPosition, yPosition);
+
+                    yPosition += lineHeight;
+                });
+
+                // Rodapé - PRETO CLARO
+                pdf.setFontSize(8);
+                pdf.setTextColor(90, 90, 90); // PRETO MAIS CLARO (RGB: 90,90,90)
+                const totalPages = pdf.internal.getNumberOfPages();
+                for (let i = 1; i <= totalPages; i++) {
+                    pdf.setPage(i);
+                    pdf.text(`Página ${i} de ${totalPages}`, pdf.internal.pageSize.getWidth() - 30, pdf.internal.pageSize.getHeight() - 10);
+                }
+
+                // Salvar PDF
+                const fileName = `relatorio_candidatos_cipa_${new Date().toISOString().split('T')[0]}.pdf`;
+                pdf.save(fileName);
+
+                showMessage('✅ Arquivo PDF gerado com sucesso!', 'success');
+                toggleExportDropdown();
+            } catch (error) {
+                console.error('Erro ao exportar PDF:', error);
+                showMessage('❌ Erro ao gerar arquivo PDF', 'error');
+            }
+        }
+
+        // Exportar lista de eleitores que já votaram para PDF
+        async function exportVotersToPDF() {
+            try {
+                // Buscar dados dos eleitores que votaram
+                const response = await fetch('/api/admin/voters');
+                if (!response.ok) {
+                    throw new Error('Erro ao buscar eleitores que votaram');
+                }
+                const voters = await response.json();
+
+                if (voters.length === 0) {
+                    showMessage('Nenhum eleitor votou ainda', 'warning');
+                    return;
+                }
+
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+
+                // Carregar a imagem da marca d'água pdf.png da pasta ELEITORES
+                let watermarkImage = null;
+
+                async function loadWatermark() {
+                    return new Promise((resolve, reject) => {
+                        const img = new Image();
+                        img.crossOrigin = 'Anonymous';
+
+                        img.onload = function () {
+                            const canvas = document.createElement('canvas');
+                            canvas.width = img.width;
+                            canvas.height = img.height;
+                            const ctx = canvas.getContext('2d');
+                            ctx.drawImage(img, 0, 0);
+                            const dataURL = canvas.toDataURL('image/png', 0.9);
+
+                            const pdfImg = new Image();
+                            pdfImg.onload = () => {
+                                watermarkImage = pdfImg;
+                                resolve();
+                            };
+                            pdfImg.onerror = () => reject(new Error('Erro ao preparar imagem'));
+                            pdfImg.src = dataURL;
+                        };
+
+                        img.onerror = (e) => reject(new Error('Falha ao carregar imagem'));
+                        img.src = '/eleitores/fotos/pdf.png';
+                    });
+                }
+
+                await loadWatermark().catch(err => {
+                    console.warn('Não foi possível carregar a marca d\'água:', err);
+                });
+
+                function addWatermark() {
+                    const pdfWidth = pdf.internal.pageSize.getWidth();
+                    const pdfHeight = pdf.internal.pageSize.getHeight();
+
+                    if (watermarkImage) {
+                        try {
+                            const canvas = document.createElement('canvas');
+                            canvas.width = watermarkImage.width;
+                            canvas.height = watermarkImage.height;
+                            const ctx = canvas.getContext('2d');
+                            ctx.drawImage(watermarkImage, 0, 0);
+                            const imageData = canvas.toDataURL('image/png', 0.9);
+                            pdf.addImage(imageData, 'PNG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST', 0.2);
+                        } catch (error) {
+                            console.warn('Erro ao adicionar marca d\'água:', error);
+                        }
+                    }
+
+                    pdf.setGState(new pdf.GState({ opacity: 0.08 }));
+                    pdf.setFontSize(80);
+                    pdf.setTextColor(200, 200, 200);
+                    const text = 'CIPA';
+                    const textWidth = pdf.getTextWidth(text);
+                    pdf.text(text, (pdfWidth - textWidth) / 2, pdfHeight / 2, { angle: 45 });
+                    pdf.setGState(new pdf.GState({ opacity: 1.0 }));
+                }
+
+                addWatermark();
+
+                // Cabeçalho
+                pdf.setFontSize(20);
+                pdf.setTextColor(50, 50, 50);
+                pdf.setFont(undefined, 'bold');
+                pdf.text('SISTEMA DE VOTAÇÃO CIPA - 2026/2027', 105, 20, { align: 'center' });
+
+                pdf.setFontSize(16);
+                pdf.setTextColor(60, 60, 60);
+                pdf.setFont(undefined, 'normal');
+                pdf.text('Relatório de Eleitores que Já Votaram', 105, 30, { align: 'center' });
+
+                pdf.setFontSize(10);
+                pdf.setTextColor(70, 70, 70);
+                pdf.text(`Data de Geração: ${new Date().toLocaleDateString('pt-BR')} ${new Date().toLocaleTimeString('pt-BR')}`, 105, 40, { align: 'center' });
+                pdf.text(`Total de Eleitores que Votaram: ${voters.length}`, 105, 46, { align: 'center' });
+
+                // Tabela de eleitores
+                let yPosition = 60;
+                const lineHeight = 8;
+                const pageHeight = pdf.internal.pageSize.getHeight();
+                const margin = 15;
+
+                // Cabeçalhos da tabela
+                pdf.setFontSize(10);
+                pdf.setFont(undefined, 'bold');
+                pdf.setTextColor(40, 40, 40);
+
+                const headers = ['Matrícula', 'Nome do Eleitor', 'Data/Hora do Voto'];
+                const colWidths = [30, 90, 60];
+                let xPosition = margin;
+
+                headers.forEach((header, index) => {
+                    pdf.text(header, xPosition, yPosition);
+                    xPosition += colWidths[index];
+                });
+
+                yPosition += lineHeight + 2;
+                pdf.line(margin, yPosition, 195, yPosition);
+                yPosition += lineHeight;
+
+                // Dados dos eleitores
+                pdf.setFont(undefined, 'normal');
+                pdf.setFontSize(9);
+                pdf.setTextColor(80, 80, 80);
+
+                voters.forEach((voter) => {
+                    if (yPosition > pageHeight - 30) {
+                        pdf.addPage();
+                        addWatermark();
+                        yPosition = 30;
+                        pdf.setTextColor(80, 80, 80);
+                        pdf.setFontSize(9);
+                    }
+
+                    xPosition = margin;
+
+                    // Matrícula
+                    pdf.text(String(voter.numcad || ''), xPosition, yPosition);
+                    xPosition += colWidths[0];
+
+                    // Nome (truncar se necessário)
+                    const nome = voter.nomfun || '';
+                    const maxNomeLength = 28;
+                    const truncatedNome = nome.length > maxNomeLength ? nome.substring(0, maxNomeLength) + '...' : nome;
+                    pdf.text(truncatedNome, xPosition, yPosition);
+                    xPosition += colWidths[1];
+
+                    // Data/Hora do Voto
+                    const dataVoto = voter.data_voto ? new Date(voter.data_voto).toLocaleString('pt-BR') : '';
+                    pdf.text(dataVoto, xPosition, yPosition);
+                    xPosition += colWidths[2];
+
+
+
+                    yPosition += lineHeight;
+                });
+
+                // Rodapé
+                pdf.setFontSize(8);
+                pdf.setTextColor(90, 90, 90);
+                const totalPages = pdf.internal.getNumberOfPages();
+                for (let i = 1; i <= totalPages; i++) {
+                    pdf.setPage(i);
+                    pdf.text(`Página ${i} de ${totalPages}`, pdf.internal.pageSize.getWidth() - 30, pdf.internal.pageSize.getHeight() - 10);
+                }
+
+                // Salvar PDF
+                const fileName = `relatorio_eleitores_votaram_${new Date().toISOString().split('T')[0]}.pdf`;
+                pdf.save(fileName);
+
+                showMessage('✅ Relatório de eleitores gerado com sucesso!', 'success');
+                toggleExportDropdown();
+            } catch (error) {
+                console.error('Erro ao exportar PDF de eleitores:', error);
+                showMessage('❌ Erro ao gerar relatório de eleitores', 'error');
+            }
+        }
+
+        // Função auxiliar para obter cookies
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        // Excluir candidato
+        async function deleteCandidate(numcad, nomfun) {
+            if (!confirm(`Tem certeza que deseja excluir o candidato ${nomfun} (Matrícula: ${numcad})?\n\nEsta ação não pode ser desfeita e todos os votos registrados serão perdidos.`)) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/admin/candidates/${numcad}`, {
+                    method: 'DELETE'
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showMessage(`✅ ${result.message}`, 'success');
+                    loadCandidates(); // Atualizar lista
+                } else {
+                    showMessage(`❌ ${result.error || 'Erro ao excluir candidato'}`, 'error');
+                }
+            } catch (error) {
+                console.error('Erro ao excluir candidato:', error);
+                showMessage('❌ Erro ao excluir candidato. Tente novamente.', 'error');
+            }
+        }
+
+        // Logout
+        async function logout() {
+            if (confirm('Tem certeza que deseja sair do painel administrativo?')) {
+                try {
+                    await fetch('/api/admin/logout', { method: 'POST' });
+                    window.location.href = '/admin';
+                } catch (error) {
+                    console.error('Erro ao fazer logout:', error);
+                    window.location.href = '/admin';
+                }
+            }
+        }
+
+        // Limpar mensagens ao digitar
+        ['numcad', 'nomfun', 'cargo'].forEach(id => {
+            document.getElementById(id).addEventListener('input', function () {
+                document.getElementById('message').style.display = 'none';
+            });
+        });
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function () {
+            loadCandidates();
+            // Foco no primeiro campo
+            document.getElementById('numcad').focus();
+        });
+
+        // Atualizar dados a cada 30 segundos
+        setInterval(loadCandidates, 30000);
+    </script>
+</body>
+
+</html>

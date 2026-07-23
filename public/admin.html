@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração - Sistema de Votação Ônix</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Background para página admin */
+        body.dashboard-page {
+            background-image: url('/4.jpg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-attachment: fixed !important;
+        }
+
+        /* Conteúdo com fundo semi-transparente para melhor legibilidade */
+        .navbar, .admin-form-container, .admin-table-container {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* FORÇAR CONTAINERS BRANCOS */
+        .navbar,
+        .main-container,
+        .admin-form-container,
+        .admin-table-container {
+            background: #ffffff !important;
+            border: 1px solid #f0f0f0 !important;
+            color: #333333 !important;
+        }
+
+        /* TUDO BRANCO */
+        div,
+        span,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        form,
+        table,
+        thead,
+        tbody,
+        tr,
+        td,
+        th {
+            background: #ffffff !important;
+            color: #333333 !important;
+        }
+
+        /* INPUTS E BOTÕES BRANCOS */
+        input,
+        button,
+        .btn,
+        .btn-red {
+            background: #ffffff !important;
+            color: #333333 !important;
+            border: 1px solid #f0f0f0 !important;
+        }
+
+        /* TABELA TOTALMENTE BRANCA */
+        table {
+            border: none !important;
+        }
+
+        th,
+        td {
+            background: #ffffff !important;
+            border-bottom: 1px solid #f0f0f0 !important;
+            color: #333333 !important;
+        }
+
+        /* REMOVER SOMBRAS */
+        * {
+            -webkit-box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            box-shadow: none !important;
+        }
+
+        /* HOVER BRANCO */
+        *:hover {
+            background: #ffffff !important;
+        }
+
+        /* FOCUS BRANCO */
+        *:focus {
+            background: #ffffff !important;
+            outline: 1px solid #f0f0f0 !important;
+        }
+    </style>
+</head>
+
+<body class="dashboard-page">
+
+    <div class="navbar">
+        <div class="nav-left">
+            <a href="#" class="site-logo">
+                <img src="/4.jpg" alt="Logo" style="height: 40px; border-radius: 6px;">
+            </a>
+        </div>
+        <div class="nav-right">
+            <div class="user-profile">
+                <div class="user-welcome" style="margin-right: 5px; font-weight: 400; font-size: 0.9em; color: #666;">
+                    Administrador</div>
+                <div class="user-name">ADMIN</div>
+            </div>
+            <button class="btn-logout" onclick="logout()">SAIR</button>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div id="message" class="message"></div>
+
+        <!-- Adicionar Candidato -->
+        <div class="admin-form-container">
+            <h2>Adicionar Candidato</h2>
+            <form id="addCandidateForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="numcad" name="numcad" required placeholder="Matrícula (NUMCAD)">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="nomfun" name="nomfun" required placeholder="Nome Completo">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="numcpf" name="numcpf" placeholder="CPF">
+                    </div>
+                    <div class="form-group">
+                        <input type="date" id="datnas" name="datnas">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="titcar" name="titcar" placeholder="Cargo">
+                </div>
+                <button type="submit" class="btn btn-red">ADICIONAR CANDIDATO</button>
+            </form>
+        </div>
+
+        <!-- Adicionar Eleitor -->
+        <div class="admin-form-container">
+            <h2>Adicionar Eleitor</h2>
+            <form id="addVoterForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="voterNumcad" name="numcad" required placeholder="Matrícula (NUMCAD)">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="voterNomfun" name="nomfun" required placeholder="Nome Completo">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-red">ADICIONAR ELEITOR</button>
+            </form>
+        </div>
+
+        <!-- Lista de Candidatos -->
+        <div class="admin-table-container">
+            <h2>Candidatos</h2>
+            <table id="candidatesTable">
+                <thead>
+                    <tr>
+                        <th>Matrícula</th>
+                        <th>Nome</th>
+                        <th>Votos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Preenchido via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Lista de Eleitores -->
+        <div class="admin-table-container">
+            <h2>Eleitores</h2>
+            <table id="votersTable">
+                <thead>
+                    <tr>
+                        <th>Matrícula</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Preenchido via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let candidates = [];
+        let voters = [];
+
+        // Load data on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadData();
+
+            // Form submissions
+            document.getElementById('addCandidateForm').addEventListener('submit', handleAddCandidate);
+            document.getElementById('addVoterForm').addEventListener('submit', handleAddVoter);
+        });
+
+        // Load all data
+        async function loadData() {
+            await Promise.all([
+                loadCandidates(),
+                loadVoters()
+            ]);
+        }
+
+        // Load candidates
+        async function loadCandidates() {
+            try {
+                const response = await fetch('/api/admin/candidatos');
+                candidates = await response.json();
+                renderCandidatesTable();
+            } catch (error) {
+                console.error('Erro ao carregar candidatos:', error);
+            }
+        }
+
+        // Load voters
+        async function loadVoters() {
+            try {
+                const response = await fetch('/api/admin/eleitores');
+                voters = await response.json();
+                renderVotersTable();
+            } catch (error) {
+                console.error('Erro ao carregar eleitores:', error);
+            }
+        }
+
+        // Handle add candidate
+        async function handleAddCandidate(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('/api/admin/candidatos', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showMessage('Candidato adicionado com sucesso!', 'success');
+                    e.target.reset();
+                    await loadData();
+                } else {
+                    showMessage(result.error || 'Erro ao adicionar candidato', 'error');
+                }
+            } catch (error) {
+                showMessage('Erro de conexão', 'error');
+            }
+        }
+
+        // Handle add voter
+        async function handleAddVoter(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('/api/admin/eleitores', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showMessage('Eleitor adicionado com sucesso!', 'success');
+                    e.target.reset();
+                    await loadData();
+                } else {
+                    showMessage(result.error || 'Erro ao adicionar eleitor', 'error');
+                }
+            } catch (error) {
+                showMessage('Erro de conexão', 'error');
+            }
+        }
+
+        // Render candidates table
+        function renderCandidatesTable() {
+            const tbody = document.querySelector('#candidatesTable tbody');
+            tbody.innerHTML = '';
+
+            candidates.forEach(candidate => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${candidate.numcad}</td>
+                    <td>${candidate.nomfun}</td>
+                    <td>${candidate.voto || 0}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Render voters table
+        function renderVotersTable() {
+            const tbody = document.querySelector('#votersTable tbody');
+            tbody.innerHTML = '';
+
+            voters.forEach(voter => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${voter.numcad}</td>
+                    <td>${voter.nomfun}</td>
+                    <td>${voter.numcpf || '-'}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Show message
+        function showMessage(text, type = 'success') {
+            const messageEl = document.getElementById('message');
+            messageEl.textContent = text;
+            messageEl.className = `message ${type}`;
+            messageEl.style.display = 'block';
+
+            setTimeout(() => {
+                messageEl.style.display = 'none';
+            }, 5000);
+        }
+
+        // Logout
+        function logout() {
+            if (confirm('Deseja realmente sair do painel administrativo?')) {
+                window.location.href = '/admin/logout';
+            }
+        }
+    </script>
+</body>
+
+</html>

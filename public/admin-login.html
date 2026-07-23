@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Admin - Sistema de Votação Ônix</title>
+    <link rel="icon" type="image/jpeg" href="cipa.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Body styling - permite background da imagem 4.jpg */
+        html,
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            min-height: 100vh;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* REMOVER FUNDO ESCURO DO LOGIN CARD */
+        .login-card {
+            background: #ffffff !important;
+            border: 1px solid #e0e0e0 !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+            border-radius: 8px !important;
+            padding: 40px !important;
+        }
+
+        /* TEXTO PRETO */
+        h1,
+        h2,
+        h3,
+        p,
+        span,
+        div,
+        label,
+        input,
+        button {
+            color: #333333 !important;
+        }
+
+        /* INPUTS BRANCOS */
+        .form-input {
+            background: #ffffff !important;
+            border: 1px solid #ddd !important;
+            color: #333333 !important;
+        }
+
+        /* BOTÃO BRANCO */
+        .btn {
+            background: #ffffff !important;
+            color: #333333 !important;
+            border: 2px solid #333333 !important;
+        }
+
+        .btn:hover {
+            background: #f5f5f5 !important;
+        }
+
+        /* LOGO PRETO */
+        .onix-logo {
+            color: #333333 !important;
+        }
+
+        .accent-red {
+            color: #333333 !important;
+        }
+
+        /* REMOVER BADGE COLORIDO */
+        .badge-admin {
+            background: #f5f5f5 !important;
+            color: #333333 !important;
+            border: 1px solid #ddd !important;
+        }
+
+        /* LINKS PRETOS */
+        a {
+            color: #333333 !important;
+        }
+
+        a:hover {
+            text-decoration: underline !important;
+        }
+    </style>
+</head>
+
+<body class="login-page admin-login-bg">
+    <div class="login-wrapper">
+        <!-- Logo no topo, fora do card -->
+        <div class="login-logo-top">
+            <img src="/4.jpg" alt="Logo Ônix">
+        </div>
+
+        <div class="login-card">
+            <div class="badge-admin">🛡️ ÁREA ADMINISTRATIVA</div>
+
+            <div id="message" class="message"></div>
+
+            <form id="adminLoginForm">
+                <div class="input-group">
+                    <span class="input-icon">👤</span>
+                    <input type="text" id="username" name="username" class="form-input focus-red"
+                        placeholder="Usuário Admin" required autocomplete="username">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-icon">🔒</span>
+                    <input type="password" id="password" name="password" class="form-input focus-red"
+                        placeholder="Senha" required autocomplete="current-password">
+                </div>
+
+                <button type="submit" class="btn btn-full btn-red" id="loginBtn">
+                    ACESSAR PAINEL
+                </button>
+            </form>
+
+            <div class="footer-link">
+                <a href="/login">← Voltar para Login de Eleitor</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showMessage(text, type = 'error') {
+            const msg = document.getElementById('message');
+            msg.textContent = text;
+            msg.className = `message ${type}`;
+            msg.style.display = 'block';
+            setTimeout(() => msg.style.display = 'none', 5000);
+        }
+
+        document.getElementById('adminLoginForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const btn = document.getElementById('loginBtn');
+            const originalText = btn.textContent;
+
+            btn.disabled = true;
+            btn.innerHTML = '<div class="loading-spinner"></div> AUTENTICANDO...';
+
+            const username = event.target.username.value;
+            const password = event.target.password.value;
+
+            try {
+                const response = await fetch('/api/admin-login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password }),
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    window.location.href = '/admin/dashboard';
+                } else {
+                    showMessage(result.error || 'Acesso negado', 'error');
+                    btn.disabled = false;
+                    btn.textContent = originalText;
+                }
+            } catch (error) {
+                showMessage('Erro de conexão', 'error');
+                btn.disabled = false;
+                btn.textContent = originalText;
+            }
+        });
+    </script>
+</body>
+
+</html>

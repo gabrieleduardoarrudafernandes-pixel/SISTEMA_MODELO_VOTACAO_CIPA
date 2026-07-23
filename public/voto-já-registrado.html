@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voto Já Registrado - Sistema de Votação CIPA</title>
+    <link rel="icon" type="image/jpeg" href="4.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('4.jpg') center/cover fixed no-repeat,
+                linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(60, 60, 60, 0.85) 40%, rgba(45, 55, 65, 0.75) 100%);
+            min-height: 100vh;
+            padding: 20px;
+            background-blend-mode: overlay;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: linear-gradient(135deg, rgba(45, 55, 65, 0.95) 0%, rgba(25, 25, 30, 0.85) 50%, rgba(15, 15, 15, 0.75) 100%);
+            backdrop-filter: blur(8px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+                inset 0 1px 3px rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
+        }
+
+        .icon-container {
+            font-size: 80px;
+            margin-bottom: 30px;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .icon {
+            background: linear-gradient(135deg, rgba(255, 100, 100, 0.9) 0%, rgba(240, 240, 240, 0.7) 100%);
+            backdrop-filter: blur(5px);
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(45, 55, 65, 0.9);
+            font-size: 60px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .title {
+            background: linear-gradient(135deg, rgba(45, 55, 65, 0.95) 0%, rgba(25, 25, 30, 0.85) 50%, rgba(15, 15, 15, 0.75) 100%);
+            backdrop-filter: blur(8px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+                inset 0 1px 3px rgba(255, 255, 255, 0.1);
+            padding: 20px 30px;
+            margin-bottom: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .title h1 {
+            margin: 0;
+            font-size: 2em;
+            font-weight: 900;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            letter-spacing: 2px;
+        }
+
+        .message {
+            background: linear-gradient(135deg, rgba(255, 243, 205, 0.9) 0%, rgba(245, 198, 203, 0.8) 100%);
+            backdrop-filter: blur(5px);
+            color: #155724;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid rgba(195, 230, 203, 0.5);
+        }
+
+        .details {
+            background: linear-gradient(135deg, rgba(45, 55, 65, 0.95) 0%, rgba(25, 25, 30, 0.85) 50%, rgba(15, 15, 15, 0.75) 100%);
+            backdrop-filter: blur(8px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+                inset 0 1px 3px rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            margin-top: 20px;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .details h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            font-weight: 600;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            letter-spacing: 1px;
+        }
+
+        .details p {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 8px 0;
+            font-size: 1em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            line-height: 1.5;
+        }
+
+        .actions {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 240, 240, 0.7) 100%);
+            backdrop-filter: blur(5px);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            text-shadow: 3px 4px 8px rgba(0, 0, 0, 0.8);
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, rgba(108, 117, 125, 0.9) 0%, rgba(108, 117, 125, 0.7) 100%);
+            backdrop-filter: blur(5px);
+            color: white;
+            border: 1px solid rgba(108, 117, 125, 0.5);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 117, 125, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px auto;
+            }
+
+            .title h1 {
+                font-size: 1.5em;
+            }
+
+            .actions {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .details {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon-container">
+            <div class="icon">🗳️</div>
+        </div>
+
+        <div class="title">
+            <h1>VOTO JÁ REGISTRADO</h1>
+        </div>
+
+        <div class="message">
+            <h3>Seu voto já foi registrado com sucesso!</h3>
+            <p>De acordo com as regras do sistema de votação, cada eleitor pode registrar apenas <strong>um único voto</strong> durante todo o período eleitoral.</p>
+            <p>Seu voto já foi contabilizado e você acredita que houve algum erro, por favor, entre em contato com a administração do sistema.</p>
+        </div>
+
+        <div class="details">
+            <h3>Informações importantes:</h3>
+            <p>✅ <strong>Voto Confirmado:</strong> Seu voto foi registrado e validado com sucesso no sistema.</p>
+            <p>⚠️ <strong>Apenas um Voto por Eleitor:</strong> Esta é uma medida de segurança para garantir a lisura e legitimidade do processo eleitoral. Cada eleitor tem direito a exatamente um voto, evitando duplicidades.</p>
+            <p>🔒 <strong>Registro Auditado:</strong> Todos os votos são registrados com data, horário, IP e outras informações de rastreio para auditoria futura.</p>
+        <p>📋 <strong>Transparência:</strong> O sistema mantém um registro completo de todas as operações de votação para garantir a integridade do processo.</p>
+        </div>
+
+        <div class="actions">
+            <a href="/login" class="btn">
+                🏠️ Voltar para Login
+            </a>
+            <button onclick="window.history.back()" class="btn btn-secondary">
+                ↩️ Voltar
+            </button>
+        </div>
+    </div>
+
+    <footer style="text-align: center; margin-top: 50px; color: rgba(255, 255, 255, 0.8); font-size: 0.9em; font-weight: 600;">
+        <p>&copy; 2024 Sistema de Votação CIPA - Processo Eleitoral Seguro e Transparente</p>
+    </footer>
+
+    <script>
+        // Redirecionar automaticamente após 5 segundos
+        setTimeout(() => {
+            window.location.href = '/login';
+        }, 5000);
+    </script>
+</body>
+</html>

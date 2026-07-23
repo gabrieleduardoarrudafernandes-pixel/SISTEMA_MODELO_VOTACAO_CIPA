@@ -1,0 +1,26 @@
+{
+  "12345": {
+    "cpf": "1112223344",
+    "nomfun": "Usuário Teste",
+    "senha": "123456",
+    "datnas": "1990-01-01",
+    "password": "$2b$10$DNkp8f1uNMZ/X694n5nU1evcdVKizPCs106iQlUKqP2yNHCwHxLqW",
+    "temporaryPassword": false
+  },
+  "54321": {
+    "cpf": "2223334445",
+    "nomfun": "Usuário Teste 2",
+    "senha": "senha123",
+    "datnas": "1985-05-15",
+    "password": "$2b$10$DNkp8f1uNMZ/X694n5nU1evcdVKizPCs106iQlUKqP2yNHCwHxLqW",
+    "temporaryPassword": false
+  },
+  "99999": {
+    "cpf": "12345678900",
+    "nomfun": "Administrador Sistema",
+    "senha": "admin123",
+    "datnas": "1980-01-01",
+    "password": "$2b$10$DNkp8f1uNMZ/X694n5nU1evcdVKizPCs106iQlUKqP2yNHCwHxLqW",
+    "temporaryPassword": false
+  }
+}
